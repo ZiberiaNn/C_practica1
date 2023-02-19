@@ -3,6 +3,7 @@
 #include <string.h>
 #include "base_struct.c"
 #include "peoplePerCity.c"
+#include "lista_ligada.c"
 
 const int SIZE = 150000;
 
@@ -20,6 +21,7 @@ int main(int argc, char *argv[]){
     int line_number = 0;
 
     item_t items[SIZE];
+	Node_Item *head, *temp;
     while ((read = getline(&line, &len, fp)) != -1) {
    	if(line_number > 0){
 		char *token;
@@ -66,12 +68,18 @@ int main(int argc, char *argv[]){
 			}
 			i++;
     		}
-		items[line_number - 1] = element;
+			items[line_number - 1] = element;
+			insert(&head, &element);
     	}
 	line = NULL;
 	line_number++;
     }
-	
+	head = reverseList(head);
+	printList(head);
+	probability_disease(50, head);
+	insert_middle(head);
+	Node_Item *nodeFound=search_by_id(head, 75000);
+	printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
 	fileOut = fopen("results.txt","w");
 	fprintf(fileOut,"%s",printPeoplePerCity());
    	fclose(fileOut);
@@ -80,5 +88,4 @@ int main(int argc, char *argv[]){
         free(line);
     exit(EXIT_SUCCESS);
 }
-
 
