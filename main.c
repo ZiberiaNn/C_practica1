@@ -4,6 +4,7 @@
 #include "base_struct.c"
 #include "peoplePerCity.c"
 #include "lista_ligada.c"
+#include "averageIncome.c"
 
 const int SIZE = 150000;
 
@@ -15,11 +16,9 @@ int main(int argc, char *argv[]){
 
     fp = fopen(argv[1], "r");
     if (fp == NULL)
-        exit(EXIT_FAILURE);
-
+    	exit(EXIT_FAILURE);
     item_t element;
     int line_number = 0;
-
     item_t items[SIZE];
 	Node_Item *head, *temp;
     while ((read = getline(&line, &len, fp)) != -1) {
@@ -28,7 +27,7 @@ int main(int argc, char *argv[]){
 		char *s = NULL;
    		int i=0;
    		while ((token = strtok_r(line , ",", &line))) {
-       			city_t result_city;
+       		city_t result_city;
 			gender_t result_gender;
 			bool_t result_illness;
 			switch(i){
@@ -56,10 +55,10 @@ int main(int argc, char *argv[]){
 					break;
 				case 5:
 					s = token;
-                                        while(*s != '\n') {
-                                                ++s;
-                                        }
-                                        *s = '\0';
+                    while(*s != '\n') {
+                            ++s;
+			        }
+                    *s = '\0';
 					result_illness = get_illness_t(token);
 					if(result_illness == fuzzy)
 						printf("Value not defined\n");
@@ -69,6 +68,7 @@ int main(int argc, char *argv[]){
 			i++;
     		}
 			items[line_number - 1] = element;
+			saveAverageElement(element, line_number);
 			insert(&head, &element);
     	}
 	line = NULL;
@@ -82,6 +82,8 @@ int main(int argc, char *argv[]){
 	printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
 	fileOut = fopen("results.txt","w");
 	fprintf(fileOut,"%s",printPeoplePerCity());
+	// Guarda el promedio de ingresos por ciudad en el documento results.txt
+	fprintf(fileOut,"%s",printAverageIncome());
    	fclose(fileOut);
     fclose(fp);
     if (line)
