@@ -8,6 +8,7 @@ unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
 void addPeoplePerCity(unsigned int cityNumber){
 	cityCount[cityNumber] = cityCount[cityNumber]+1;
 }
+
 const char * printPeoplePerCity(){
 	char arr[9][20] = {"Dallas", "New York City", "Los Angeles", "Mountain View", "Boston","Washington D.C.", "San Diego", "Austin", "Not found"};
 	static char peoplePerCity[400];
