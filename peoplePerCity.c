@@ -5,11 +5,9 @@
 
 unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
 
-void addPeoplePerCity(unsigned int cityNumber){
-	cityCount[cityNumber] = cityCount[cityNumber]+1;
-}
+const char * printPeoplePerCity(item_t items[], int size){
+	iterateItems(items, size);
 
-const char * printPeoplePerCity(){
 	char arr[9][20] = {"Dallas", "New York City", "Los Angeles", "Mountain View", "Boston","Washington D.C.", "San Diego", "Austin", "Not found"};
 	static char peoplePerCity[400];
 	char str1[50], str2[50];
@@ -21,4 +19,15 @@ const char * printPeoplePerCity(){
  		strcat(peoplePerCity, str2);
   	}	
   	return peoplePerCity;
+}
+
+void iterateItems(item_t items[], int size){
+	for(int i = 0; i < size; i++)
+	{
+		addPeoplePerCity(items[i].city);
+	}
+}
+
+void addPeoplePerCity(unsigned int cityNumber){
+	cityCount[cityNumber] = cityCount[cityNumber]+1;
 }

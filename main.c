@@ -36,7 +36,6 @@ int main(int argc, char *argv[]){
 					break;
 				case 1:
 					result_city = get_city_t(token);
-					addPeoplePerCity(result_city);
 					if(result_city == E)
 						printf("City not defined\n");
 					element.city = result_city;
@@ -68,22 +67,22 @@ int main(int argc, char *argv[]){
 			i++;
     		}
 			items[line_number - 1] = element;
-			saveAverageElement(element, line_number);
-			insert(&head, &element);
+			//saveAverageElement(element, line_number);
+			//insert(&head, &element);
     	}
 	line = NULL;
 	line_number++;
     }
-	head = reverseList(head);
-	printList(head);
-	probability_disease(50, head);
-	insert_middle(head);
-	Node_Item *nodeFound=search_by_id(head, 75000);
-	printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
+	//head = reverseList(head);
+	//printList(head);
+	//probability_disease(50, head);
+	//insert_middle(head);
+	//Node_Item *nodeFound=search_by_id(head, 75000);
+	//printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
 	fileOut = fopen("results.txt","w");
-	fprintf(fileOut,"%s",printPeoplePerCity());
+	fprintf(fileOut,"%s",printPeoplePerCity(items, SIZE));
 	// Guarda el promedio de ingresos por ciudad en el documento results.txt
-	fprintf(fileOut,"%s",printAverageIncome());
+	//fprintf(fileOut,"%s",printAverageIncome());
    	fclose(fileOut);
     fclose(fp);
     if (line)

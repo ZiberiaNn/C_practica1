@@ -7,12 +7,3 @@ Número de personas en Washington D.C.: 8120.
 Número de personas en San Diego: 4881.
 Número de personas en Austin: 12292.
 Número de personas en Not found: 0.
-Promedio de ingresos en Dallas: 17558.
-Promedio de ingresos en New York City: 37175.
-Promedio de ingresos en Los Angeles: 37007.
-Promedio de ingresos en Mountain View: 52508.
-Promedio de ingresos en Boston: 36364.
-Promedio de ingresos en Washington D.C.: 26717.
-Promedio de ingresos en San Diego: 38948.
-Promedio de ingresos en Austin: 33739.
-Promedio de ingresos en Not found: 0.
