@@ -80,9 +80,14 @@ int main(int argc, char *argv[]){
 	//insert_middle(head);
 	//Node_Item *nodeFound=search_by_id(head, 75000);
 	//printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
+	
 	fileOut = fopen("results.txt","w");
 	fprintf(fileOut,"%s",printPeoplePerCity(items, SIZE));
-	fprintf(fileOut,"%s",getElementById(items, 150000));
+
+	const char * resultGetById = getElementById(items, 149998);
+	fprintf(fileOut,"%s",resultGetById);
+	free(resultGetById);
+
 	// Guarda el promedio de ingresos por ciudad en el documento results.txt
 	//fprintf(fileOut,"%s",printAverageIncome());
    	fclose(fileOut);

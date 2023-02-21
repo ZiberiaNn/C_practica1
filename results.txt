@@ -7,4 +7,4 @@ Número de personas en Washington D.C.: 8120.
 Número de personas en San Diego: 4881.
 Número de personas en Austin: 12292.
 Número de personas en Error: 0.
-Element with ID: 150000, City: Austin, Gender: Female, Age: 37, Income: 87251, Illness: No.
+Element with ID: 149998, City: Austin, Gender: Male, Age: 26, Income: 111885, Illness: No.
