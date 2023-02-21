@@ -8,7 +8,6 @@
 const char * printProbabilitySick(item_t items[], int size){
 
     int ageMin;
-    int ageMax;
     printf("(Punto 3) Probabilidad de estar enfermo cuando se tienen X o más años\n");
     // Pide la edad minima y maxima por consola
     printf("Ingrese la edad minima: ");

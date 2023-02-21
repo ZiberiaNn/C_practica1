@@ -7,6 +7,7 @@
 #include "lista_ligada.c"
 #include "averageIncome.c"
 #include "probabilitySick.c"
+#include "peoplePerCityWithAge.c"
 
 const int SIZE = 150000;
 
@@ -69,7 +70,6 @@ int main(int argc, char *argv[]){
 			i++;
     		}
 			items[line_number - 1] = element;
-			//saveAverageElement(element, line_number);
 			//insert(&head, &element);
     	}
 	line = NULL;
@@ -92,9 +92,11 @@ int main(int argc, char *argv[]){
 	// Guarda el promedio de ingresos por ciudad en el documento results.txt
 	//fprintf(fileOut,"%s",printAverageIncome(items, SIZE));
 	//fprintf(fileOut,"%s",printProbabilitySick(items, SIZE));
+	//fprintf(fileOut,"%s",printPeoplePerCityWithAge(items, SIZE));
 	//Quitar esta linea cuando se corrija la impresión en el documento.
 	printAverageIncome(items, SIZE);
 	printProbabilitySick(items, SIZE);
+	printPeoplePerCityWithAge(items, SIZE);
 	//---------------------------------------------
 	
    	fclose(fileOut);
