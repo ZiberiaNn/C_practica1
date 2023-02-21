@@ -3,6 +3,7 @@
 #include <string.h>
 #include "base_struct.c"
 #include "peoplePerCity.c"
+#include "getById.c"
 #include "lista_ligada.c"
 #include "averageIncome.c"
 
