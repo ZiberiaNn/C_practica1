@@ -34,7 +34,8 @@ const char * printAverageIncome(item_t items[], int size){
     for (int i = 0; i < 8; i++)
     {	  
         averageIncome[i] = averageIncome[i]/cityCount[i]; 
-         
+        printf("Promedio de ingresos en %s: %d.\n", city_names[i], averageIncome[i]);
+        /*
         nbytes1 = snprintf(NULL, 0, "Promedio de ingresos en %s", city_names[i]) + 1;
         str1 = malloc(nbytes1);
         snprintf(str1, nbytes1, "Promedio de ingresos en %s", city_names[i]);
@@ -44,8 +45,10 @@ const char * printAverageIncome(item_t items[], int size){
         str1 = malloc(nbytes1);
         snprintf(str1, nbytes1,": %d.\n",averageIncome[i]);
         strcat(averageIncomePerCity, str1);
+        */
+
     }
-    free(str1);
+    //free(str1);
     return averageIncomePerCity;
 }
 

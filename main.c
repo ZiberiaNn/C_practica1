@@ -89,7 +89,11 @@ int main(int argc, char *argv[]){
 	free(resultGetById);
 
 	// Guarda el promedio de ingresos por ciudad en el documento results.txt
-	fprintf(fileOut,"%s",printAverageIncome(items, SIZE));
+	//fprintf(fileOut,"%s",printAverageIncome(items, SIZE));
+	
+	//Quitar esta linea cuando se corrija la impresión en el documento.
+	printAverageIncome(items, SIZE);
+	//---------------------------------------------
    	fclose(fileOut);
     fclose(fp);
     if (line)

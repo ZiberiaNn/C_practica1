@@ -8,20 +8,3 @@ Número de personas en San Diego: 4881.
 Número de personas en Austin: 12292.
 Número de personas en Error: 0.
 Element with ID: 149998, City: Austin, Gender: Male, Age: 26, Income: 111885, Illness: No.
-úmero de personas en Dallas: 19707.
-Número de personas en New York City: 50307.
-Número de personas en Los Angeles: 32173.
-Número de personas en Mountain View: 14219.
-Número de personas en Boston: 8301.
-Número de personas en Washington D.C.: 8120.
-Número de personas en San Diego: 4881.
-Número de personas en Austin: 12292.
-Número de personas en Error: 0.
-Promedio de ingresos en Dallas: 0.
-Promedio de ingresos en New York City: 0.
-Promedio de ingresos en Los Angeles: 0.
-Promedio de ingresos en Mountain View: 0.
-Promedio de ingresos en Boston: 0.
-Promedio de ingresos en Washington D.C.: 0.
-Promedio de ingresos en San Diego: 0.
-Promedio de ingresos en Austin: 0.
