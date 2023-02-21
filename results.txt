@@ -6,4 +6,4 @@ Número de personas en Boston: 8301.
 Número de personas en Washington D.C.: 8120.
 Número de personas en San Diego: 4881.
 Número de personas en Austin: 12292.
-Número de personas en Not found: 0.
+Número de personas en Error: 0.

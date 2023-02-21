@@ -82,6 +82,7 @@ int main(int argc, char *argv[]){
 	//printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
 	fileOut = fopen("results.txt","w");
 	fprintf(fileOut,"%s",printPeoplePerCity(items, SIZE));
+	getElementById(items, 5);
 	// Guarda el promedio de ingresos por ciudad en el documento results.txt
 	//fprintf(fileOut,"%s",printAverageIncome());
    	fclose(fileOut);

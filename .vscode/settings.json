@@ -2,6 +2,7 @@
     "files.associations": {
         "string.h": "c",
         "typeinfo": "c",
-        "base_struct.h": "c"
+        "base_struct.h": "c",
+        "peoplepercity.h": "c"
     }
 }
