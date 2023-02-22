@@ -9,7 +9,7 @@ unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
 const char * printPeoplePerCity(item_t items[], int size){
 	addPeoplePerCity(items, size);
 
-	static char peoplePerCity[] = "";
+	static char peoplePerCity[] = "===== PUNTO 1. Número de personas por ciudad =====\n";
 	char *str;
 	size_t nbytes;
 	for (int i = 0; i < 9; i++)

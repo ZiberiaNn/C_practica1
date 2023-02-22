@@ -85,18 +85,14 @@ int main(int argc, char *argv[]){
 	fileOut = fopen("results.txt","w");
 	fprintf(fileOut,"%s",printPeoplePerCity(items, SIZE));
 
+	char * resultInsertElement = insertElement(items, SIZE);
+	printf("%s",resultInsertElement);
+
 	char * resultGetById = getElementById(items, 75000);
 	fprintf(fileOut,"%s",resultGetById);
 
-	insertElement(items, SIZE, element);
-	resultGetById = getElementById(items, 74999);
-	printf("%s",resultGetById);
-	resultGetById = getElementById(items, 75000);
-	printf("%s",resultGetById);
-	resultGetById = getElementById(items, 75001);
-	printf("%s",resultGetById);
 	free(resultGetById);
-
+	free(resultInsertElement);
 	// Guarda el promedio de ingresos por ciudad en el documento results.txt
 	//fprintf(fileOut,"%s",printAverageIncome());
    	fclose(fileOut);
