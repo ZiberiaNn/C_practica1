@@ -26,11 +26,12 @@ void selectOption(item_t items[], int SIZE){
             printf("%s",resultGetById);
             free(resultGetById);
         }else if(option==5){ 
+            printf("===== PUNTO 5. Ingresar elemento a la mitad de los datos (id = 75000) =====\n");
             char * resultInsertElement = insertElement(items, SIZE);
             printf("%s",resultInsertElement);
             free(resultInsertElement);
         }else if(option==6){
-            printf("%s","Pongan el punto 2 acá porfa");
+            printf("%s","Pongan el punto 6 acá porfa");
         }else if(option==7){
             printf("%s","Falta implementar bien el punto 7");
         }

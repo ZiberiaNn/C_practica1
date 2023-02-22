@@ -25,8 +25,6 @@ item_t getElementFromInput(int size){
     item_t element;
     int age, income, city;
     char gender[8], illness[5];
-    printf("===== PUNTO 5. Ingresar elemento a la mitad de los datos (id = 75000) =====\n");
-
     printf("Ingrese el número correspondiente a la ciudad:\n0 = Dallas, 1 = New York City, 2 = Los Angeles, 3 = Mountain View, 4 = Boston, 5 = Washington D.C., 6 = San Diego, 7 = Austin.\n* ");
     scanf("%d",&city);
 
