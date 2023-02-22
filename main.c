@@ -6,6 +6,7 @@
 #include "getById.c"
 #include "lista_ligada.c"
 #include "averageIncome.c"
+#include "insertElement.c"
 
 const int SIZE = 150000;
 
@@ -20,7 +21,7 @@ int main(int argc, char *argv[]){
     	exit(EXIT_FAILURE);
     item_t element;
     int line_number = 0;
-    item_t items[SIZE];
+    item_t items[SIZE+1];
 	struct Node_Item *head=NULL, *temp;
     while ((read = getline(&line, &len, fp)) != -1) {
    	if(line_number > 0){
@@ -84,9 +85,17 @@ int main(int argc, char *argv[]){
 	fileOut = fopen("results.txt","w");
 	fprintf(fileOut,"%s",printPeoplePerCity(items, SIZE));
 
-	const char * resultGetById = getElementById(items, 149998);
+	char * resultGetById = getElementById(items, 75000);
 	fprintf(fileOut,"%s",resultGetById);
-	//free(resultGetById);
+
+	insertElement(items, SIZE, element);
+	resultGetById = getElementById(items, 74999);
+	printf("%s",resultGetById);
+	resultGetById = getElementById(items, 75000);
+	printf("%s",resultGetById);
+	resultGetById = getElementById(items, 75001);
+	printf("%s",resultGetById);
+	free(resultGetById);
 
 	// Guarda el promedio de ingresos por ciudad en el documento results.txt
 	//fprintf(fileOut,"%s",printAverageIncome());
