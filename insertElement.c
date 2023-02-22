@@ -23,12 +23,12 @@ char *insertElement(item_t items[], int size){
 
 item_t getElementFromInput(int size){
     item_t element;
-    int age, income;
-    char city[25], gender[8], illness[5];
+    int age, income, city;
+    char gender[8], illness[5];
     printf("===== PUNTO 5. Ingresar elemento a la mitad de los datos (id = 75000) =====\n");
 
-    printf("Ingrese la ciudad entre las opciones: Dallas, New York City, Los Angeles, Mountain View, Boston, Washington D.C., San Diego, Austin.\n* ");
-    scanf("%[^\n]s",city);
+    printf("Ingrese el número correspondiente a la ciudad:\n0 = Dallas, 1 = New York City, 2 = Los Angeles, 3 = Mountain View, 4 = Boston, 5 = Washington D.C., 6 = San Diego, 7 = Austin.\n* ");
+    scanf("%d",&city);
 
     printf("Ingrese el género entre las opciones: Male, Female.\n* ");
     scanf("%s",gender);
@@ -42,8 +42,11 @@ item_t getElementFromInput(int size){
     printf("Ingrese si tiene una enfermedad: Yes, No.\n* ");
     scanf("%s", illness);
 
+    if(city>8){
+        city = 8;
+    }
     element.id=(size/2);
-    element.city=get_city_t(city);
+    element.city=get_city_t(city_names[city]);
     element.gender=get_gender_t(gender);
     element.age=age;
     element.income=income;

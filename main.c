@@ -7,6 +7,8 @@
 #include "lista_ligada.c"
 #include "averageIncome.c"
 #include "insertElement.c"
+#include "menu.c"
+
 
 const int SIZE = 150000;
 
@@ -75,27 +77,24 @@ int main(int argc, char *argv[]){
 	line = NULL;
 	line_number++;
     }
-	head = reverseList(head);
-	printList(head);
-	probability_disease(50, head);
-	insert_middle(head);
-	Node_Item *nodeFound=search_by_id(head, 75000);
-	printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
+	//Menú de selección del punto a ejecutar
+	selectOption(items, SIZE);
+
+	//head = reverseList(head);
+	//printList(head);
+	//probability_disease(50, head);
+	//insert_middle(head);
+	//Node_Item *nodeFound=search_by_id(head, 75000);
+	//printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
 	
-	fileOut = fopen("results.txt","w");
-	fprintf(fileOut,"%s",printPeoplePerCity(items, SIZE));
+	//Imprime el archivo de salida
+	//fileOut = fopen("results.txt","w");
+	//fprintf(fileOut,"%s",printPeoplePerCity(items, SIZE));
 
-	char * resultInsertElement = insertElement(items, SIZE);
-	printf("%s",resultInsertElement);
-
-	char * resultGetById = getElementById(items, 75000);
-	fprintf(fileOut,"%s",resultGetById);
-
-	free(resultGetById);
-	free(resultInsertElement);
 	// Guarda el promedio de ingresos por ciudad en el documento results.txt
 	//fprintf(fileOut,"%s",printAverageIncome());
-   	fclose(fileOut);
+
+   	//fclose(fileOut);
     fclose(fp);
     if (line)
         free(line);
