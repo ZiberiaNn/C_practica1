@@ -13,7 +13,7 @@
 const int SIZE = 150000;
 
 int main(int argc, char *argv[]){
-    FILE * fp, *fileOut;
+    FILE * fp;
     char * line = NULL;
     size_t len = 0;
     ssize_t read;
@@ -79,7 +79,7 @@ int main(int argc, char *argv[]){
     }
 	//Menú de selección del punto a ejecutar
 	selectOption(items, SIZE);
-
+	
 	//head = reverseList(head);
 	//printList(head);
 	//probability_disease(50, head);
@@ -87,14 +87,11 @@ int main(int argc, char *argv[]){
 	//Node_Item *nodeFound=search_by_id(head, 75000);
 	//printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
 	
-	//Imprime el archivo de salida
-	//fileOut = fopen("results.txt","w");
-	//fprintf(fileOut,"%s",printPeoplePerCity(items, SIZE));
+
 
 	// Guarda el promedio de ingresos por ciudad en el documento results.txt
 	//fprintf(fileOut,"%s",printAverageIncome());
 
-   	//fclose(fileOut);
     fclose(fp);
     if (line)
         free(line);

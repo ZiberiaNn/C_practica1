@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "fileOut.c"
 
 
-void selectOption(item_t items[], int SIZE){
+void selectOption(item_t items[], int size){
     int continuar = 1;
     while(continuar==1){
         int option;
@@ -13,7 +14,8 @@ void selectOption(item_t items[], int SIZE){
 
         scanf("%d", &option);
         if(option==1){
-            printf("%s",printPeoplePerCity(items, SIZE));
+            printf("%s","===== PUNTO 1. Número de personas por ciudad =====\n");
+            printf("%s",printPeoplePerCity(items, size));
         }else if(option==2){
             printf("%s","Pongan el punto 2 acá porfa");
         }else if(option==3){
@@ -27,13 +29,13 @@ void selectOption(item_t items[], int SIZE){
             free(resultGetById);
         }else if(option==5){ 
             printf("===== PUNTO 5. Ingresar elemento a la mitad de los datos (id = 75000) =====\n");
-            char * resultInsertElement = insertElement(items, SIZE);
+            char * resultInsertElement = insertElement(items, size);
             printf("%s",resultInsertElement);
             free(resultInsertElement);
         }else if(option==6){
             printf("%s","Pongan el punto 6 acá porfa");
         }else if(option==7){
-            printf("%s","Falta implementar bien el punto 7");
+            printFileOut(items, size);
         }
         printf("%s", "Ingrese 1 para ejecutar otra opción. De lo contrario, ingrese 0.\n* ");
         scanf("%d", &continuar);
