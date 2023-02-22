@@ -7,6 +7,7 @@
 #include "lista_ligada.c"
 #include "averageIncome.c"
 #include "insertElement.c"
+#include "fileOut.c"
 #include "menu.c"
 
 
@@ -79,7 +80,7 @@ int main(int argc, char *argv[]){
     }
 	//Menú de selección del punto a ejecutar
 	selectOption(items, SIZE);
-	
+
 	//head = reverseList(head);
 	//printList(head);
 	//probability_disease(50, head);

@@ -8,8 +8,7 @@ void printFileOut(item_t items[], int size){
     //Imprime punto 1
 	fileOut = fopen("results.txt","w");
 	fprintf(fileOut,"%s",printPeoplePerCity(items, size));
-    fclose(fileOut);
-
+    
     //Imprime punto 4
     int id;
     printf("%s", "====== PUNTO 4. Obtener elemento por ID ======\nIngrese el ID del elemento deseado:\n* ");

@@ -1,10 +1,11 @@
-===== PUNTO 1. Número de personas por ciudad =====
 Número de personas en Dallas: 19707.
-Número de personas en New York City: 1919250464.
-Número de personas en Los Angeles: 1634627443.
-Número de personas en Mountain View: 1852121203.
-Número de personas en Boston: 2003127840.
-Número de personas en Washington D.C.: 1919899936.
-Número de personas en San Diego: 1766006891.
-Número de personas en Austin: 540703092.
-Número de personas en Error: 959527217.
+Número de personas en New York City: 50307.
+Número de personas en Los Angeles: 32173.
+Número de personas en Mountain View: 14219.
+Número de personas en Boston: 8301.
+Número de personas en Washington D.C.: 8120.
+Número de personas en San Diego: 4881.
+Número de personas en Austin: 12292.
+Número de personas en Error: 0.
+Element with ID: 7, City: Dallas, Gender: Female, Age: 32, Income: 33155, Illness: No.
+Elemento insertado: ID: 75000, City: Austin, Gender: No, Age: 7, Income: 7, Illness: Not defined.
