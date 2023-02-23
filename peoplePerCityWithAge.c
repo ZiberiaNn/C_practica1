@@ -9,8 +9,6 @@ unsigned int cityAgeCount[9] = {0,0,0,0,0,0,0,0,0};
 const char * printPeoplePerCityWithAge(item_t items[], int size){
 
     int ageCity;
-
-    printf("(Punto 6) Cantidad de personas en una ciudad con X edad)\n");
     // Pide la edad minima y maxima por consola
     printf("Ingrese la edad a buscar: ");
     scanf("%d", &ageCity);
