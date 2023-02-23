@@ -74,7 +74,6 @@ int main(int argc, char *argv[]){
 			i++;
     		}
 			items[line_number - 1] = element;
-			//saveAverageElement(element, line_number);
 			insert(&head, &element);
     	}
 	line = NULL;
@@ -89,19 +88,6 @@ int main(int argc, char *argv[]){
 	//insert_middle(head);
 	//Node_Item *nodeFound=search_by_id(head, 75000);
 	//printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
-	
-
-
-	// Guarda el promedio de ingresos por ciudad en el documento results.txt
-	//fprintf(fileOut,"%s",printAverageIncome(items, SIZE));
-	//fprintf(fileOut,"%s",printProbabilitySick(items, SIZE));
-	//fprintf(fileOut,"%s",printPeoplePerCityWithAge(items, SIZE));
-	//Quitar esta linea cuando se corrija la impresión en el documento.
-	//printAverageIncome(items, SIZE);
-	//printProbabilitySick(items, SIZE);
-	//printPeoplePerCityWithAge(items, SIZE);
-	//---------------------------------------------
-	
     fclose(fp);
     if (line)
         free(line);

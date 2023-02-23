@@ -17,8 +17,10 @@ void selectOption(item_t items[], int size){
             printf("%s",printPeoplePerCity(items, size));
         }else if(option==2){
             printf("%s","Pongan el punto 2 acá porfa");
+            printAverageIncome(items, size);
         }else if(option==3){
             printf("%s","Pongan el punto 3 acá porfa");
+            printProbabilitySick(items, size);
         }else if(option==4){
             int id;
             printf("%s", "====== PUNTO 4. Obtener elemento por ID ======\nIngrese el ID del elemento deseado:\n* ");
@@ -33,6 +35,7 @@ void selectOption(item_t items[], int size){
             free(resultInsertElement);
         }else if(option==6){
             printf("%s","Pongan el punto 6 acá porfa");
+            printPeoplePerCityWithAge(items, size);
         }else if(option==7){
             printFileOut(items, size);
         }
