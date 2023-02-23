@@ -80,7 +80,7 @@ int main(int argc, char *argv[]){
 	line_number++;
     }
 	//Menú de selección del punto a ejecutar
-	//selectOption(items, SIZE);
+	selectOption(items, SIZE);
 
 	//head = reverseList(head);
 	//printList(head);

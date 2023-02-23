@@ -7,5 +7,14 @@ Número de personas en Washington D.C.: 8120.
 Número de personas en San Diego: 4881.
 Número de personas en Austin: 12292.
 Número de personas en Error: 0.
-Element with ID: 7, City: Dallas, Gender: Female, Age: 32, Income: 33155, Illness: No.
-Elemento insertado: ID: 75000, City: Austin, Gender: No, Age: 7, Income: 7, Illness: Not defined.
+Número de personas en Dallas: 59121.
+Número de personas en New York City: 150922.
+Número de personas en Los Angeles: 96519.
+Número de personas en Mountain View: 42657.
+Número de personas en Boston: 24903.
+Número de personas en Washington D.C.: 24360.
+Número de personas en San Diego: 14643.
+Número de personas en Austin: 36875.
+Número de personas en Error: 0.
+Element with ID: 1, City: Dallas, Gender: Male, Age: 41, Income: 40367, Illness: No.
+Elemento insertado: ID: 75000, City: New York City, Gender: No, Age: 1, Income: 1, Illness: Not defined.

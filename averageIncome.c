@@ -12,7 +12,6 @@ unsigned int averageIncome[9] = {0,0,0,0,0,0,0,0,0};
 const char * printAverageIncome(item_t items[], int size){
     int ageMinimum;
     int ageMaximum;
-    printf("(Punto 2) Promedio de ingresos de las personas en una ciudad en un rango de edad)\n");
     // Pide la edad minima y maxima por consola
     printf("Ingrese la edad minima: ");
     scanf("%d", &ageMinimum);
