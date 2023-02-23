@@ -8,6 +8,14 @@ void printFileOut(item_t items[], int size){
     //Imprime punto 1
 	fileOut = fopen("results.txt","w");
 	fprintf(fileOut,"%s",printPeoplePerCity(items, size));
+
+    //Imprime punto 2
+    //fprintf(fileOut,"%s","===== PUNTO 2. Promedio de salarios por ciudad en un rango de edad =====\n");
+    //fprint(fileOut,"%s",printAverageIncome(items, size));
+
+    //Imprime punto 3
+    //fprintf(fileOut,"%s","===== PUNTO 3. Probabilidad de estar enfermo en un rango de edad =====\n");
+    //fprint(fileOut,"%s",printProbabilitySick(items, size));
     
     //Imprime punto 4
     int id;
@@ -22,6 +30,10 @@ void printFileOut(item_t items[], int size){
     char * resultInsertElement = insertElement(items, size);
     fprintf(fileOut,"%s",resultInsertElement);
     free(resultInsertElement);
+
+    //Imprime punto 6
+    //fprintf(fileOut,"%s","===== PUNTO 6. Número de personas por ciudad con cierta edad =====\n");
+    //fprint(fileOut,"%s",printPeoplePerCityWithAge(items, size));
 
     fclose(fileOut);
 }
