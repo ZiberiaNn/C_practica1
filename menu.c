@@ -20,7 +20,7 @@ void selectOption(item_t items[], int size){
             printf("%s",printAverageIncome(items, size));
         }else if(option==3){
             printf("%s","===== PUNTO 3. Probabilidad de estar enfermo en un rango de edad =====\n");
-            printProbabilitySick(items, size);
+            printf("%s",printProbabilitySick(items, size));
         }else if(option==4){
             int id;
             printf("%s", "====== PUNTO 4. Obtener elemento por ID ======\nIngrese el ID del elemento deseado:\n* ");

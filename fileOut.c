@@ -4,7 +4,6 @@
 
 void printFileOut(item_t items[], int size){
     FILE *fileOut;
-    
     fileOut = fopen("results.txt","w");
 
 	//Imprime el archivo de salida
@@ -16,8 +15,8 @@ void printFileOut(item_t items[], int size){
     fprintf(fileOut,"%s",printAverageIncome(items, size));
 
     //Imprime punto 3
-    //printf(fileOut,"%s","===== PUNTO 3. Probabilidad de estar enfermo en un rango de edad =====\n");
-    //fprintf(fileOut,"%s",printProbabilitySick(items, size));
+    printf("%s","===== PUNTO 3. Probabilidad de estar enfermo en un rango de edad =====\n");
+    fprintf(fileOut,"%s",printProbabilitySick(items, size));
     
     //Imprime punto 4
     int id;

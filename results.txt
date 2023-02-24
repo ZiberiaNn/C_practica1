@@ -7,14 +7,15 @@ Número de personas en Washington D.C.: 8120.
 Número de personas en San Diego: 4881.
 Número de personas en Austin: 12292.
 Número de personas en Error: 0.
-Promedio de ingresos en Dallas: 0.
-Promedio de ingresos en New York City: 0.
-Promedio de ingresos en Los Angeles: 0.
-Promedio de ingresos en Mountain View: 0.
-Promedio de ingresos en Boston: 0.
-Promedio de ingresos en Washington D.C.: 0.
-Promedio de ingresos en San Diego: 0.
-Promedio de ingresos en Austin: 0.
+Promedio de ingresos en Dallas: 6213.
+Promedio de ingresos en New York City: 13540.
+Promedio de ingresos en Los Angeles: 13285.
+Promedio de ingresos en Mountain View: 18351.
+Promedio de ingresos en Boston: 12696.
+Promedio de ingresos en Washington D.C.: 9888.
+Promedio de ingresos en San Diego: 14566.
+Promedio de ingresos en Austin: 12906.
 No hay personas en Error en el rango de edad ingresado.
+La probabilidad de estar enfermo es: 4698/150000 = 0.031320 
 Element with ID: 1, City: Dallas, Gender: Male, Age: 41, Income: 40367, Illness: No.
 Elemento insertado: ID: 75000, City: New York City, Gender: No, Age: 1, Income: 1, Illness: Not defined.

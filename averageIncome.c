@@ -29,7 +29,8 @@ const char * printAverageIncome(item_t items[], int size){
 
     // Imprime en el documento
 
-    static char averageIncomePerCity[] = "";
+    static char averageIncomePerCity[500];
+    memset(averageIncomePerCity, 0, sizeof(averageIncomePerCity));
 
 	//char *str1;
 	//size_t nbytes1;
