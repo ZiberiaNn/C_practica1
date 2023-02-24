@@ -82,12 +82,22 @@ int main(int argc, char *argv[]){
 	//Menú de selección del punto a ejecutar
 	selectOption(items, SIZE);
 
-	//head = reverseList(head);
-	//printList(head);
+	head = reverseList(head);
+	printList(head);
 	//probability_disease(50, head);
 	//insert_middle(head);
 	//Node_Item *nodeFound=search_by_id(head, 75000);
 	//printf("id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", nodeFound->data.id, city_names[nodeFound->data.city], nodeFound->data.age, gender_names[nodeFound->data.gender], nodeFound->data.income, illness_values[nodeFound->data.illness] );
+
+	//cantidad de personas por ciudad Punto 1
+	//printf("%s", quantityByCity(head));
+
+	//Promedio de Salario por edad y ciudad punto 2
+	//printf("%s", incomeCity(head, "Dallas", 40, 50));
+
+	//Punto 6
+	//printf("%s", ageByCity(head, 50));
+
     fclose(fp);
     if (line)
         free(line);
