@@ -26,18 +26,12 @@ const char * printAverageIncome(item_t items[], int size){
             averageIncome[items[i].city] += items[i].income;
         }
     }
-
-    // Imprime en el documento
+    //Toca llamar a este loco para que se actualice el arreglo de cityCount
+    addPeoplePerCity(items, size);
 
     static char averageIncomePerCity[500];
     memset(averageIncomePerCity, 0, sizeof(averageIncomePerCity));
-
-	//char *str1;
-	//size_t nbytes1;
-
-    //Toca llamar a este loco para que se actualice el arreglo de cityCount
-    addPeoplePerCity(items, size);
-    char str[250];
+    char str[100];
 
     for (int i = 0; i < 9; i++)
     {	  

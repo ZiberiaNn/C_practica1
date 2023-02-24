@@ -15,8 +15,6 @@ const char * printProbabilitySick(item_t items[], int size){
     static char probabilitySick[100];
     memset(probabilitySick, 0, sizeof(probabilitySick));
 
-    char str[250];
-
     int sickCount = 0;
     int totalCount = 0;
     for (int i = 0; i < size; i++)
@@ -27,8 +25,7 @@ const char * printProbabilitySick(item_t items[], int size){
         totalCount++;
     }
 
-    snprintf(str, sizeof(str),"La probabilidad de estar enfermo es: %d/%d = %f \n", sickCount, totalCount, (float)sickCount/totalCount);
-    strcat(probabilitySick, str);
+    snprintf(probabilitySick, sizeof(probabilitySick),"La probabilidad de estar enfermo es: %d/%d = %f \n", sickCount, totalCount, (float)sickCount/totalCount);
 
     /*
     nbytes = snprintf(NULL, 0, "La probabilidad de estar enfermo es: %d/%d = %f", sickCount, totalCount, (float)sickCount/totalCount) + 1;

@@ -33,8 +33,8 @@ void printFileOut(item_t items[], int size){
     free(resultInsertElement);
 
     //Imprime punto 6
-    //printf("%s","===== PUNTO 6. Número de personas por ciudad con cierta edad =====\n");
-    //fprintf(fileOut,"%s",printPeoplePerCityWithAge(items, size));
+    printf("%s","===== PUNTO 6. Número de personas por ciudad con cierta edad =====\n");
+    fprintf(fileOut,"%s",printPeoplePerCityWithAge(items, size));
 
     fclose(fileOut);
 }

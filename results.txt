@@ -18,4 +18,13 @@ Promedio de ingresos en Austin: 12906.
 No hay personas en Error en el rango de edad ingresado.
 La probabilidad de estar enfermo es: 4698/150000 = 0.031320 
 Element with ID: 1, City: Dallas, Gender: Male, Age: 41, Income: 40367, Illness: No.
-Elemento insertado: ID: 75000, City: New York City, Gender: No, Age: 1, Income: 1, Illness: Not defined.
+Elemento insertado: ID: 75000, City: Dallas, Gender: No, Age: 0, Income: 0, Illness: Not defined.
+Número de personas con 35 años en Dallas: 473.
+Número de personas con 35 años en New York City: 1244.
+Número de personas con 35 años en Los Angeles: 797.
+Número de personas con 35 años en Mountain View: 360.
+Número de personas con 35 años en Boston: 187.
+Número de personas con 35 años en Washington D.C.: 201.
+Número de personas con 35 años en San Diego: 101.
+Número de personas con 35 años en Austin: 295.
+Número de personas con 35 años en Error: 0.

@@ -19,25 +19,14 @@ const char * printPeoplePerCityWithAge(item_t items[], int size){
         }
 	}
 
+	static char peoplePerCityWithAge[500];
+	memset(peoplePerCityWithAge, 0, sizeof(peoplePerCityWithAge));
+    char str[100];
 
-	static char peoplePerCityWithAge[] = "";
-	//char *strCityAge;
-	//size_t nbytesCity;
 	for (int i = 0; i < 9; i++)
  	{	
-        printf("Número de personas con %d años en %s: %d.\n", ageCity, city_names[i], cityAgeCount[i]);
-/*
-		nbytesCity = snprintf(NULL, 0, "Número de personas con %d años en %s", ageCity, city_names[i]) + 1;
-		strCityAge = malloc(nbytesCity);
-		snprintf(strCityAge, nbytesCity, "Número de personas con %d años en %s", ageCity, city_names[i]);
- 		strcat(peoplePerCityWithAge, strCityAge);
-
-		nbytesCity = snprintf(NULL, 0,": %d.\n",cityAgeCount[i]) + 1;
-		strCityAge = malloc(nbytesCity);
-		snprintf(strCityAge, nbytesCity,": %d.\n",cityAgeCount[i]);
- 		strcat(peoplePerCityWithAge, strCityAge);
-*/
+        snprintf(str, sizeof(str),"Número de personas con %d años en %s: %d.\n", ageCity, city_names[i], cityAgeCount[i]);
+		strcat(peoplePerCityWithAge, str);
   	}	
-	//free(strCityAge);
   	return peoplePerCityWithAge;
 }
