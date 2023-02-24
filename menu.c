@@ -17,7 +17,7 @@ void selectOption(item_t items[], int size){
             printf("%s",printPeoplePerCity(items, size));
         }else if(option==2){
             printf("%s","===== PUNTO 2. Promedio de salarios por ciudad en un rango de edad =====\n");
-            printAverageIncome(items, size);
+            printf("%s",printAverageIncome(items, size));
         }else if(option==3){
             printf("%s","===== PUNTO 3. Probabilidad de estar enfermo en un rango de edad =====\n");
             printProbabilitySick(items, size);
@@ -37,6 +37,7 @@ void selectOption(item_t items[], int size){
             printf("%s","===== PUNTO 6. Número de personas por ciudad con cierta edad =====\n");
             printPeoplePerCityWithAge(items, size);
         }else if(option==7){
+            printf("%s","===== PUNTO 7. Imprimir el resultado de cada opción en el archivo results.txt =====\n");
             printFileOut(items, size);
         }
         printf("%s", "Ingrese 1 para ejecutar otra opción. De lo contrario, ingrese 0.\n* ");

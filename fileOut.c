@@ -4,22 +4,24 @@
 
 void printFileOut(item_t items[], int size){
     FILE *fileOut;
+    
+    fileOut = fopen("results.txt","w");
+
 	//Imprime el archivo de salida
     //Imprime punto 1
-	fileOut = fopen("results.txt","w");
 	fprintf(fileOut,"%s",printPeoplePerCity(items, size));
 
     //Imprime punto 2
-    //fprintf(fileOut,"%s","===== PUNTO 2. Promedio de salarios por ciudad en un rango de edad =====\n");
-    //fprint(fileOut,"%s",printAverageIncome(items, size));
+    printf("===== PUNTO 2. Promedio de salarios por ciudad en un rango de edad =====\n");
+    fprintf(fileOut,"%s",printAverageIncome(items, size));
 
     //Imprime punto 3
-    //fprintf(fileOut,"%s","===== PUNTO 3. Probabilidad de estar enfermo en un rango de edad =====\n");
-    //fprint(fileOut,"%s",printProbabilitySick(items, size));
+    //printf(fileOut,"%s","===== PUNTO 3. Probabilidad de estar enfermo en un rango de edad =====\n");
+    //fprintf(fileOut,"%s",printProbabilitySick(items, size));
     
     //Imprime punto 4
     int id;
-    printf("%s", "====== PUNTO 4. Obtener elemento por ID ======\nIngrese el ID del elemento deseado:\n* ");
+    printf("====== PUNTO 4. Obtener elemento por ID ======\nIngrese el ID del elemento deseado:\n* ");
     scanf("%d", &id);
     char * resultGetById = getElementById(items, id);
     fprintf(fileOut,"%s",resultGetById);
@@ -32,8 +34,8 @@ void printFileOut(item_t items[], int size){
     free(resultInsertElement);
 
     //Imprime punto 6
-    //fprintf(fileOut,"%s","===== PUNTO 6. Número de personas por ciudad con cierta edad =====\n");
-    //fprint(fileOut,"%s",printPeoplePerCityWithAge(items, size));
+    //printf("%s","===== PUNTO 6. Número de personas por ciudad con cierta edad =====\n");
+    //fprintf(fileOut,"%s",printPeoplePerCityWithAge(items, size));
 
     fclose(fileOut);
 }

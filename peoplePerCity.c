@@ -7,26 +7,20 @@
 unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
 
 const char * printPeoplePerCity(item_t items[], int size){
-	static char peoplePerCity[] = "";
+	static char peoplePerCity[500];
 	memset(peoplePerCity, 0, sizeof(peoplePerCity));
 
 	addPeoplePerCity(items, size);
 
-	char *str;
-	size_t nbytes;
+	char str[250];
 	for (int i = 0; i < 9; i++)
  	{	
-		nbytes = snprintf(NULL, 0, "Número de personas en %s", city_names[i]) + 1; /*  find out the size to use. +1 for the '\0' */
-		str = malloc(nbytes);
-		snprintf(str, nbytes, "Número de personas en %s", city_names[i]);
+		snprintf(str, sizeof(str), "Número de personas en %s", city_names[i]);
  		strcat(peoplePerCity, str);
 
-		nbytes = snprintf(NULL, 0,": %d.\n",cityCount[i]) + 1; /*  find out the size to use. +1 for the '\0' */
-		str = malloc(nbytes);
-		snprintf(str, nbytes,": %d.\n",cityCount[i]);
+		snprintf(str, sizeof(str),": %d.\n",cityCount[i]);
  		strcat(peoplePerCity, str);
   	}	
-	free(str);
   	return peoplePerCity;
 }
 

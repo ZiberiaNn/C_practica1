@@ -30,33 +30,24 @@ const char * printAverageIncome(item_t items[], int size){
     // Imprime en el documento
 
     static char averageIncomePerCity[] = "";
+
 	//char *str1;
 	//size_t nbytes1;
 
     //Toca llamar a este loco para que se actualice el arreglo de cityCount
     addPeoplePerCity(items, size);
+    char str[250];
 
     for (int i = 0; i < 9; i++)
     {	  
         if(cityCount[i] == 0){
-            printf("No hay personas en %s en el rango de edad ingresado.\n", city_names[i]);
+            snprintf(str, sizeof(str), "No hay personas en %s en el rango de edad ingresado.\n", city_names[i]);
+            strcat(averageIncomePerCity, str);
             continue;
         }
         averageIncome[i] = averageIncome[i]/cityCount[i]; 
-        printf("Promedio de ingresos en %s: %d.\n", city_names[i], averageIncome[i]);
-        /*
-        nbytes1 = snprintf(NULL, 0, "Promedio de ingresos en %s", city_names[i]) + 1;
-        str1 = malloc(nbytes1);
-        snprintf(str1, nbytes1, "Promedio de ingresos en %s", city_names[i]);
-        strcat(averageIncomePerCity, str1);
-
-        nbytes1 = snprintf(NULL, 0,": %d.\n",averageIncome[i]) + 1;
-        str1 = malloc(nbytes1);
-        snprintf(str1, nbytes1,": %d.\n",averageIncome[i]);
-        strcat(averageIncomePerCity, str1);
-        */
-
+        snprintf(str, sizeof(str), "Promedio de ingresos en %s: %d.\n", city_names[i], averageIncome[i]);
+        strcat(averageIncomePerCity, str);
     }
-    //free(str1);
     return averageIncomePerCity;
 }

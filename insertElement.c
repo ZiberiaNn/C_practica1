@@ -15,7 +15,7 @@ char *insertElement(item_t items[], int size){
 	}
     items[(size/2)-1]=element; 
     char *result;
-    size_t nbytes = snprintf(NULL, 0, "Elemento insertado: ID: %d, City: %s, Gender: %s, Age: %d, Income: %d, Illness: %s.\n", items[(size/2)-1].id, city_names[items[(size/2)-1].city], gender_names[items[(size/2)-1].gender], items[(size/2)-1].age, items[(size/2)-1].income, illness_values[items[(size/2)-1].illness]) + 1; /*  find out the size to use. +1 for the '\0' */
+    size_t nbytes = snprintf(NULL, 0, "\nElemento insertado: ID: %d, City: %s, Gender: %s, Age: %d, Income: %d, Illness: %s.\n", items[(size/2)-1].id, city_names[items[(size/2)-1].city], gender_names[items[(size/2)-1].gender], items[(size/2)-1].age, items[(size/2)-1].income, illness_values[items[(size/2)-1].illness]) + 1; /*  find out the size to use. +1 for the '\0' */
 	result = malloc(nbytes);
 	snprintf(result, nbytes, "Elemento insertado: ID: %d, City: %s, Gender: %s, Age: %d, Income: %d, Illness: %s.\n", items[(size/2)-1].id, city_names[items[(size/2)-1].city], gender_names[items[(size/2)-1].gender], items[(size/2)-1].age, items[(size/2)-1].income, illness_values[items[(size/2)-1].illness]);
     return result;

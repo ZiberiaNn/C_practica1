@@ -1,0 +1,20 @@
+Número de personas en Dallas: 19707.
+Número de personas en New York City: 50307.
+Número de personas en Los Angeles: 32173.
+Número de personas en Mountain View: 14219.
+Número de personas en Boston: 8301.
+Número de personas en Washington D.C.: 8120.
+Número de personas en San Diego: 4881.
+Número de personas en Austin: 12292.
+Número de personas en Error: 0.
+Promedio de ingresos en Dallas: 0.
+Promedio de ingresos en New York City: 0.
+Promedio de ingresos en Los Angeles: 0.
+Promedio de ingresos en Mountain View: 0.
+Promedio de ingresos en Boston: 0.
+Promedio de ingresos en Washington D.C.: 0.
+Promedio de ingresos en San Diego: 0.
+Promedio de ingresos en Austin: 0.
+No hay personas en Error en el rango de edad ingresado.
+Element with ID: 1, City: Dallas, Gender: Male, Age: 41, Income: 40367, Illness: No.
+Elemento insertado: ID: 75000, City: New York City, Gender: No, Age: 1, Income: 1, Illness: Not defined.
