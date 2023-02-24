@@ -7,9 +7,11 @@
 unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
 
 const char * printPeoplePerCity(item_t items[], int size){
+	static char peoplePerCity[] = "";
+	memset(peoplePerCity, 0, sizeof(peoplePerCity));
+
 	addPeoplePerCity(items, size);
 
-	static char peoplePerCity[] = "";
 	char *str;
 	size_t nbytes;
 	for (int i = 0; i < 9; i++)
@@ -29,6 +31,7 @@ const char * printPeoplePerCity(item_t items[], int size){
 }
 
 void addPeoplePerCity(item_t items[], int size){
+	memset(cityCount, 0, sizeof(cityCount));
 	for(int i = 0; i < size; i++)
 	{
 		cityCount[items[i].city] = cityCount[items[i].city]+1;

@@ -10,6 +10,7 @@
 unsigned int averageIncome[9] = {0,0,0,0,0,0,0,0,0};
 
 const char * printAverageIncome(item_t items[], int size){
+    memset(averageIncome, 0, sizeof(averageIncome));
     int ageMinimum;
     int ageMaximum;
     // Pide la edad minima y maxima por consola
