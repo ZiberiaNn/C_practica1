@@ -14,10 +14,15 @@ char *insertElement(item_t items[], int size){
         items[i].id = items[i].id +1;
 	}
     items[(size/2)-1]=element; 
+    //Inicializa un string vacío
     char *result;
+    //Obtiene el numero de bytes que contendrá el string
     size_t nbytes = snprintf(NULL, 0, "\nElemento insertado: ID: %d, City: %s, Gender: %s, Age: %d, Income: %d, Illness: %s.\n", items[(size/2)-1].id, city_names[items[(size/2)-1].city], gender_names[items[(size/2)-1].gender], items[(size/2)-1].age, items[(size/2)-1].income, illness_values[items[(size/2)-1].illness]) + 1; /*  find out the size to use. +1 for the '\0' */
-	result = malloc(nbytes);
+	//Asigna memoria igual al numero de bytes del string
+    result = malloc(nbytes);
+    //Escribe el string resultado, de tamaño nbytes, en el string result
 	snprintf(result, nbytes, "Elemento insertado: ID: %d, City: %s, Gender: %s, Age: %d, Income: %d, Illness: %s.\n", items[(size/2)-1].id, city_names[items[(size/2)-1].city], gender_names[items[(size/2)-1].gender], items[(size/2)-1].age, items[(size/2)-1].income, illness_values[items[(size/2)-1].illness]);
+    //Devuelve el string result
     return result;
 }
 

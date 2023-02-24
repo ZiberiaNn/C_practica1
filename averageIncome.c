@@ -29,19 +29,26 @@ const char * printAverageIncome(item_t items[], int size){
     //Toca llamar a este loco para que se actualice el arreglo de cityCount
     addPeoplePerCity(items, size);
 
+    //Crea un string para el resultado general de la función
     static char averageIncomePerCity[500];
+    //Reinicializa el string en null
     memset(averageIncomePerCity, 0, sizeof(averageIncomePerCity));
+    //String auxiliar que sirve para concatenar cada linea en el string del resultado general
     char str[100];
 
     for (int i = 0; i < 9; i++)
     {	  
         if(cityCount[i] == 0){
+            //Guarda el resultado i en str
             snprintf(str, sizeof(str), "No hay personas en %s en el rango de edad ingresado.\n", city_names[i]);
+            //Concatena str con el resultado general
             strcat(averageIncomePerCity, str);
             continue;
         }
+        //Guarda el resultado i en str
         averageIncome[i] = averageIncome[i]/cityCount[i]; 
         snprintf(str, sizeof(str), "Promedio de ingresos en %s: %d.\n", city_names[i], averageIncome[i]);
+        //Concatena str con el resultado general
         strcat(averageIncomePerCity, str);
     }
     return averageIncomePerCity;

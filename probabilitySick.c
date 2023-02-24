@@ -12,7 +12,9 @@ const char * printProbabilitySick(item_t items[], int size){
     printf("Ingrese la edad minima: ");
     scanf("%d", &ageMin);
 
+    //String que retorna el resultado de la probabilidad
     static char probabilitySick[100];
+    //Reinicializa el string en "" (null)
     memset(probabilitySick, 0, sizeof(probabilitySick));
 
     int sickCount = 0;
@@ -24,15 +26,9 @@ const char * printProbabilitySick(item_t items[], int size){
         }
         totalCount++;
     }
-
+    //Copia el string del resultado en probabilitySick
     snprintf(probabilitySick, sizeof(probabilitySick),"La probabilidad de estar enfermo es: %d/%d = %f \n", sickCount, totalCount, (float)sickCount/totalCount);
 
-    /*
-    nbytes = snprintf(NULL, 0, "La probabilidad de estar enfermo es: %d/%d = %f", sickCount, totalCount, (float)sickCount/totalCount) + 1;
-    str = malloc(nbytes);
-    snprintf(str, nbytes, "La probabilidad de estar enfermo es: %d/%d = %f", sickCount, totalCount, (float)sickCount/totalCount);
-    strcat(probabilitySick, str);
-    free(str);
-    */
+    //Retorna el string del resultado
     return probabilitySick;
 }

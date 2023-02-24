@@ -27,11 +27,13 @@ void selectOption(item_t items[], int size){
             scanf("%d", &id);
             char * resultGetById = getElementById(items, id);
             printf("%s",resultGetById);
+            //Libera el bloque de memoria asignado con malloc dentro de la función getElementById
             free(resultGetById);
         }else if(option==5){ 
             printf("===== PUNTO 5. Ingresar elemento a la mitad de los datos (id = 75000) =====\n");
             char * resultInsertElement = insertElement(items, size);
             printf("%s",resultInsertElement);
+            //Libera el bloque de memoria asignado con malloc dentro de la función resultInsertElement
             free(resultInsertElement);
         }else if(option==6){
             printf("%s","===== PUNTO 6. Número de personas por ciudad con cierta edad =====\n");

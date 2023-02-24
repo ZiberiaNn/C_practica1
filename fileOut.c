@@ -24,12 +24,14 @@ void printFileOut(item_t items[], int size){
     scanf("%d", &id);
     char * resultGetById = getElementById(items, id);
     fprintf(fileOut,"%s",resultGetById);
+    //Libera el bloque de memoria asignado con malloc dentro de la función resultGetById
     free(resultGetById);
 
     //Imprime punto 5
     printf("===== PUNTO 5. Ingresar elemento a la mitad de los datos (id = 75000) =====\n");
     char * resultInsertElement = insertElement(items, size);
     fprintf(fileOut,"%s",resultInsertElement);
+    //Libera el bloque de memoria asignado con malloc dentro de la función resultInsertElement
     free(resultInsertElement);
 
     //Imprime punto 6
