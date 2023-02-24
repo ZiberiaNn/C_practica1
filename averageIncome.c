@@ -13,6 +13,7 @@ const char * printAverageIncome(item_t items[], int size){
     memset(averageIncome, 0, sizeof(averageIncome));
     int ageMinimum;
     int ageMaximum;
+    int cityCountPerAge[9] = {0,0,0,0,0,0,0,0,0};
     // Pide la edad minima y maxima por consola
     printf("Ingrese la edad minima: ");
     scanf("%d", &ageMinimum);
@@ -24,10 +25,9 @@ const char * printAverageIncome(item_t items[], int size){
     for(int i = 0; i<size; i++){
         if(items[i].age >= ageMinimum && items[i].age <= ageMaximum){
             averageIncome[items[i].city] += items[i].income;
+            cityCountPerAge[items[i].city]++;
         }
     }
-    //Toca llamar a este loco para que se actualice el arreglo de cityCount
-    addPeoplePerCity(items, size);
 
     //Crea un string para el resultado general de la función
     static char averageIncomePerCity[500];
@@ -38,7 +38,7 @@ const char * printAverageIncome(item_t items[], int size){
 
     for (int i = 0; i < 9; i++)
     {	  
-        if(cityCount[i] == 0){
+        if(cityCountPerAge[i] == 0){
             //Guarda el resultado i en str
             snprintf(str, sizeof(str), "No hay personas en %s en el rango de edad ingresado.\n", city_names[i]);
             //Concatena str con el resultado general
@@ -46,7 +46,7 @@ const char * printAverageIncome(item_t items[], int size){
             continue;
         }
         //Guarda el resultado i en str
-        averageIncome[i] = averageIncome[i]/cityCount[i]; 
+        averageIncome[i] = averageIncome[i]/cityCountPerAge[i]; 
         snprintf(str, sizeof(str), "Promedio de ingresos en %s: %d.\n", city_names[i], averageIncome[i]);
         //Concatena str con el resultado general
         strcat(averageIncomePerCity, str);
