@@ -5,12 +5,10 @@
 
 // Calculate the probability of being sick of a person in a range of ages
 
-const char * printProbabilitySick(item_t items[], int size){
+const char * printProbabilitySick(item_t items[], int size, int ageMin){
 
-    int ageMin;
-    // Pide la edad minima y maxima por consola
-    printf("Ingrese la edad minima: ");
-    scanf("%d", &ageMin);
+
+
 
     //String que retorna el resultado de la probabilidad
     static char probabilitySick[100];

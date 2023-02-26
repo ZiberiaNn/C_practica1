@@ -6,12 +6,9 @@
 
 unsigned int cityAgeCount[9] = {0,0,0,0,0,0,0,0,0};
 
-const char * printPeoplePerCityWithAge(item_t items[], int size){
+const char * printPeoplePerCityWithAge(item_t items[], int size, int ageCity){
 	memset(cityAgeCount, 0, sizeof(cityAgeCount));
-    int ageCity;
-    // Pide la edad minima y maxima por consola
-    printf("Ingrese la edad a buscar: ");
-    scanf("%d", &ageCity);
+    
     for(int i = 0; i < size; i++)
 	{
         if(items[i].age == ageCity){

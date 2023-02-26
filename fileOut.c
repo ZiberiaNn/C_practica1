@@ -12,11 +12,24 @@ void printFileOut(item_t items[], int size){
 
     //Imprime punto 2
     printf("===== PUNTO 2. Promedio de salarios por ciudad en un rango de edad =====\n");
-    fprintf(fileOut,"%s",printAverageIncome(items, size));
+    int ageMinimum;
+    int ageMaximum;
+    int cityAverageIncome;
+    printf("Ingrese la edad minima: ");
+    scanf("%d", &ageMinimum);
+    printf("Ingrese la edad maxima: ");
+    scanf("%d", &ageMaximum);
+    printf("Ingrese el número correspondiente a la ciudad:\n0 = Dallas, 1 = New York City, 2 = Los Angeles, 3 = Mountain View, 4 = Boston, 5 = Washington D.C., 6 = San Diego, 7 = Austin.\n* ");
+    scanf("%d",&cityAverageIncome);
+    fprintf(fileOut,"%s",printAverageIncome(items, size, ageMinimum, ageMaximum, cityAverageIncome));
 
     //Imprime punto 3
     printf("%s","===== PUNTO 3. Probabilidad de estar enfermo en un rango de edad =====\n");
-    fprintf(fileOut,"%s",printProbabilitySick(items, size));
+    int ageMin;
+    // Pide la edad minima y maxima por consola
+    printf("Ingrese la edad minima: ");
+    scanf("%d", &ageMin);
+    fprintf(fileOut,"%s",printProbabilitySick(items, size ,ageMin));
     
     //Imprime punto 4
     int id;
@@ -36,7 +49,11 @@ void printFileOut(item_t items[], int size){
 
     //Imprime punto 6
     printf("%s","===== PUNTO 6. Número de personas por ciudad con cierta edad =====\n");
-    fprintf(fileOut,"%s",printPeoplePerCityWithAge(items, size));
+    int ageCity;
+    // Pide la edad minima y maxima por consola
+    printf("Ingrese la edad a buscar: ");
+    scanf("%d", &ageCity);
+    fprintf(fileOut,"%s",printPeoplePerCityWithAge(items, size ,ageCity));
 
     fclose(fileOut);
 }

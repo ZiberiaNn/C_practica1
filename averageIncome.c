@@ -9,24 +9,14 @@
 // Contiene el promedio de ingresos de las personas en una ciudad
 unsigned int averageIncome[9] = {0,0,0,0,0,0,0,0,0};
 
-const char * printAverageIncome(item_t items[], int size){
+const char * printAverageIncome(item_t items[], int size, int ageMinimum, int ageMaximum, int cityAverageIncome){
     memset(averageIncome, 0, sizeof(averageIncome));
-    int ageMinimum;
-    int ageMaximum;
-    int cityAverageIncome;
+
     int cityCountPerAge[9] = {0,0,0,0,0,0,0,0,0};
     // Pide la edad minima y maxima por consola
-    printf("Ingrese la edad minima: ");
-    scanf("%d", &ageMinimum);
-    printf("Ingrese la edad maxima: ");
-    scanf("%d", &ageMaximum);
-    printf("Ingrese el número correspondiente a la ciudad:\n0 = Dallas, 1 = New York City, 2 = Los Angeles, 3 = Mountain View, 4 = Boston, 5 = Washington D.C., 6 = San Diego, 7 = Austin.\n* ");
-    scanf("%d",&cityAverageIncome);
-
     if(cityAverageIncome>8){
         cityAverageIncome = 8;
     }
-
     // Valida que la edad del elemento se encuentra entre la edad minima y maxima
     // Y suma el ingreso de la persona a la ciudad correspondiente
     for(int i = 0; i<size; i++){
