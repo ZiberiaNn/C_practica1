@@ -4,6 +4,7 @@
         "typeinfo": "c",
         "base_struct.h": "c",
         "peoplepercity.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "fileout.h": "c"
     }
 }
