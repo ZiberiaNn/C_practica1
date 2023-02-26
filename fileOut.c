@@ -36,7 +36,7 @@ void printFileOut(item_t items[], int size){
     int id;
     printf("====== PUNTO 4. Obtener elemento por ID ======\nIngrese el ID del elemento deseado:\n* ");
     scanf("%d", &id);
-    char * resultGetById = getElementById(items, id);
+    char * resultGetById = getElementById(items[id-1]);
     fprintf(fileOut,"%s",resultGetById);
     //Libera el bloque de memoria asignado con malloc dentro de la función resultGetById
     free(resultGetById);

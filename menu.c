@@ -60,15 +60,39 @@ void selectOption(item_t items[], int size, struct Node_Item *head){
             // Pide la edad minima y maxima por consola
             printf("Ingrese la edad minima: ");
             scanf("%d", &ageMin);
+
+            printf("%s","Resultado por array:\n");
+            gettimeofday(&inicio, 0);
             printf("%s",printProbabilitySick(items, size, ageMin));
+            gettimeofday(&fin, 0);    
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+
+            printf("%s","Resultado por lista ligada:\n");
+            gettimeofday(&inicio, 0);
+            printf("%s",probability_disease(ageMin, head));
+            gettimeofday(&fin, 0);    
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+
         }else if(option==4){
             int id;
             printf("%s", "====== PUNTO 4. Obtener elemento por ID ======\nIngrese el ID del elemento deseado:\n* ");
             scanf("%d", &id);
-            char * resultGetById = getElementById(items, id);
+
+            printf("%s","Resultado por array:\n");
+            gettimeofday(&inicio, 0);
+            char * resultGetById = getElementById(items[id-1]);
             printf("%s",resultGetById);
-            //Libera el bloque de memoria asignado con malloc dentro de la función getElementById
+            gettimeofday(&fin, 0);    
             free(resultGetById);
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+
+            printf("%s","Resultado por lista ligada:\n");
+            gettimeofday(&inicio, 0);
+            printf("%s",search_by_id(head, id));
+            gettimeofday(&fin, 0);    
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+       
+            //Libera el bloque de memoria asignado con malloc dentro de la función getElementById
         }else if(option==5){ 
             printf("===== PUNTO 5. Ingresar elemento a la mitad de los datos (id = 75000) =====\n");
             char * resultInsertElement = insertElement(items, size, getElementFromInput(size));
