@@ -9,7 +9,6 @@ typedef struct Node_Item{
 
 Node_Item* createNodeItem(item_t *data);
 void insert(Node_Item **head, item_t *data);
-void printList(Node_Item *head);
 void probability_disease(int age, Node_Item *head);
 Node_Item *search_by_id(Node_Item *head, int id);
 Node_Item *reverseList(Node_Item *head);
@@ -42,16 +41,6 @@ Node_Item *reverseList(Node_Item *head) {
         current = next;
     }
     return newHead;
-}
-
-void printList(Node_Item *head){
-    Node_Item *temp = head;
-    int i=0;
-    while(i<5){
-        printf("id: %d, city: %s, age: %d  \n", temp->data.id, city_names[temp->data.city], temp->data.age);
-        temp = temp->next;
-        i+=1;
-    }
 }
 
 void probability_disease(int age, Node_Item *head){
