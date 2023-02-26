@@ -50,7 +50,11 @@ void selectOption(item_t items[], int size){
             free(resultInsertElement);
         }else if(option==6){
             printf("%s","===== PUNTO 6. Número de personas por ciudad con cierta edad =====\n");
-            printf("%s",printPeoplePerCityWithAge(items, size));
+            int ageCity;
+            // Pide la edad minima y maxima por consola
+            printf("Ingrese la edad a buscar: ");
+            scanf("%d", &ageCity);
+            printf("%s",printPeoplePerCityWithAge(items, size, ageCity));
         }else if(option==7){
             printf("%s","===== PUNTO 7. Imprimir el resultado de cada opción en el archivo results.txt =====\n");
             printFileOut(items, size);
