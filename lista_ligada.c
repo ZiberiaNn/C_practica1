@@ -125,28 +125,40 @@ char * search_by_id(Node_Item *head, int id){
     //Se regresa el arreglo de caracteres.
     return str;
 }
-
+//Método para insertar un elemento en la mitad de la lista ligada.
 void insert_middle(Node_Item *head, item_t element){
-     Node_Item *temp = head;
+    //Se crea un apuntador que apuntará al nodo actual.
+    Node_Item *temp = head;
+    //Se recorre la lista hasta que el apuntador temp sea NULL.
     while(temp != NULL){
+        //Se verifica si el id del nodo actual es 74999.
         if(temp->data.id==74999){
+            //Se crea un nuevo nodo.
             Node_Item *new = createNodeItem(&element);
+            //Se asigna el nodo siguiente del nodo actual como el nodo siguiente del nuevo nodo.
             new->next=temp->next;
+            //Se asigna el nuevo nodo como el nodo siguiente del nodo actual.
             temp->next=new;
+            //Se asigna el nodo siguiente del nuevo nodo como el nodo actual.
             temp = new->next;
+            //Se llama al método que incrementa en 1 el id de todos los nodos siguientes al nuevo nodo.
             increment_id(temp);
             return;
             
         }
-        temp->data.id += 1;
         temp = temp->next;
     }
 }
 
+//Método que incrementa en 1 el id de todos los nodos siguientes al nuevo nodo.
 void increment_id(Node_Item *head){
+    //Se crea un apuntador que apuntará al nodo actual.
     Node_Item *temp = head;
+    //Se recorre la lista hasta que el apuntador temp sea NULL.
     while(temp != NULL){
+        //Se incrementa en 1 el id del nodo actual.
         temp->data.id += 1;
+        //Se asigna el nodo siguiente como el nodo actual.
         temp = temp->next;
     }
 }
