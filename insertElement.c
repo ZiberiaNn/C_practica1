@@ -6,8 +6,7 @@
 
 
 
-char *insertElement(item_t items[], int size){
-    item_t element = getElementFromInput(size);
+char *insertElement(item_t items[], int size, item_t element){
 	for(int i = size; i >= size/2; i--)
 	{
         items[i] = items[i-1];

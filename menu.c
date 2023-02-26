@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "menu.h"
 
 void selectOption(item_t items[], int size){
     int continuar = 1;
@@ -44,7 +44,7 @@ void selectOption(item_t items[], int size){
             free(resultGetById);
         }else if(option==5){ 
             printf("===== PUNTO 5. Ingresar elemento a la mitad de los datos (id = 75000) =====\n");
-            char * resultInsertElement = insertElement(items, size);
+            char * resultInsertElement = insertElement(items, size, getElementFromInput(size));
             printf("%s",resultInsertElement);
             //Libera el bloque de memoria asignado con malloc dentro de la función resultInsertElement
             free(resultInsertElement);
@@ -63,3 +63,4 @@ void selectOption(item_t items[], int size){
         scanf("%d", &continuar);
     }
 }
+
