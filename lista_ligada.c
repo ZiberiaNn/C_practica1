@@ -13,7 +13,7 @@ void printList(Node_Item *head);
 void probability_disease(int age, Node_Item *head);
 Node_Item *search_by_id(Node_Item *head, int id);
 Node_Item *reverseList(Node_Item *head);
-void insert_middle(Node_Item *head);
+void insert_middle(Node_Item *head, item_t element);
 void increment_id(Node_Item *head);
 char * quantityByCity(Node_Item *head);
 char * incomeCity(Node_Item *head, char city[], int x, int y);
@@ -81,12 +81,11 @@ Node_Item *search_by_id(Node_Item *head, int id){
     return NULL;
 }
 
-void insert_middle(Node_Item *head){
+void insert_middle(Node_Item *head, item_t element){
      Node_Item *temp = head;
     while(temp != NULL){
         if(temp->data.id==74999){
-            item_t data={75000, M, 34,FEMALE, 100000, true};
-            Node_Item *new = createNodeItem(&data);
+            Node_Item *new = createNodeItem(&element);
             new->next=temp->next;
             temp->next=new;
             temp = new->next;
