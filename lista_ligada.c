@@ -51,17 +51,28 @@ void insert(Node_Item **head, item_t *data){
     *head = new;
 }
 
+
+//Método que reversa la lista ligada
 Node_Item *reverseList(Node_Item *head) {
+    //Se crea un apuntador que apuntará al inicio de la lista.
     Node_Item *newHead = NULL;
+    //Se crea un apuntador que apuntará al nodo actual.
     Node_Item *current = head;
-    while (current != NULL) {
-        Node_Item *next = current->next;
+    //Se crea un apuntador que apuntará al nodo siguiente.
+    Node_Item *next = current->next;
+    //Se recorre la lista hasta que el apuntador current sea NULL.
+    while (current != NULL) {       
+        //Al nodo actual se le asigna como siguiente el nodo que apuntaba al inicio de la lista.
         current->next = newHead;
+        //Se asigna el nodo actual como el inicio de la lista.
         newHead = current;
+        //Se asigna el nodo siguiente como el nodo actual.
         current = next;
     }
+    //Se regresa el nuevo inicio de la lista.
     return newHead;
 }
+
 
 char * probability_disease(int age, Node_Item *head){
     static char str[100];
