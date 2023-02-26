@@ -17,7 +17,16 @@ void selectOption(item_t items[], int size){
             printf("%s",printPeoplePerCity(items, size));
         }else if(option==2){
             printf("%s","===== PUNTO 2. Promedio de salarios por ciudad en un rango de edad =====\n");
-            printf("%s",printAverageIncome(items, size));
+            int ageMinimum;
+            int ageMaximum;
+            int cityAverageIncome;
+            printf("Ingrese la edad minima: ");
+            scanf("%d", &ageMinimum);
+            printf("Ingrese la edad maxima: ");
+            scanf("%d", &ageMaximum);
+            printf("Ingrese el número correspondiente a la ciudad:\n0 = Dallas, 1 = New York City, 2 = Los Angeles, 3 = Mountain View, 4 = Boston, 5 = Washington D.C., 6 = San Diego, 7 = Austin.\n* ");
+            scanf("%d",&cityAverageIncome);
+            printf("%s",printAverageIncome(items, size, ageMinimum, ageMaximum, cityAverageIncome));
         }else if(option==3){
             printf("%s","===== PUNTO 3. Probabilidad de estar enfermo en un rango de edad =====\n");
             printf("%s",printProbabilitySick(items, size));
