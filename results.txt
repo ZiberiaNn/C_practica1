@@ -1,1 +1,22 @@
-
+Número de personas en Dallas: 19707.
+Número de personas en New York City: 50307.
+Número de personas en Los Angeles: 32173.
+Número de personas en Mountain View: 14219.
+Número de personas en Boston: 8301.
+Número de personas en Washington D.C.: 8120.
+Número de personas en San Diego: 4881.
+Número de personas en Austin: 12292.
+Número de personas en Error: 0.
+Promedio de ingresos en Dallas: 45390.
+La probabilidad de estar enfermo es: 3177/150000 = 0.021180 
+Element with ID: 2, City: Dallas, Gender: Male, Age: 54, Income: 45084, Illness: No.
+Elemento insertado: ID: 75000, City: Los Angeles, Gender: Male, Age: 35, Income: 500000, Illness: No.
+Número de personas con 35 años en Dallas: 473.
+Número de personas con 35 años en New York City: 1244.
+Número de personas con 35 años en Los Angeles: 798.
+Número de personas con 35 años en Mountain View: 360.
+Número de personas con 35 años en Boston: 187.
+Número de personas con 35 años en Washington D.C.: 201.
+Número de personas con 35 años en San Diego: 101.
+Número de personas con 35 años en Austin: 295.
+Número de personas con 35 años en Error: 0.

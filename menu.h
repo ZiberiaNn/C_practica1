@@ -2,6 +2,6 @@
 #define __MENU_H
 #include "base_struct.h"
 
-void selectOption(item_t items[], int size);
+void selectOption(item_t items[], int size, struct Node_Item *head);
 
 #endif

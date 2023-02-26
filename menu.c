@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/time.h>
 #include "menu.h"
+double executionTime(struct timeval inicio, struct timeval fin);
 
-void selectOption(item_t items[], int size){
+void selectOption(item_t items[], int size, struct Node_Item *head){
     int continuar = 1;
+    struct timeval inicio, fin;
     while(continuar==1){
         int option;
         printf("%s", "==============================================\n");
@@ -14,7 +17,19 @@ void selectOption(item_t items[], int size){
         scanf("%d", &option);
         if(option==1){
             printf("%s","===== PUNTO 1. Número de personas por ciudad =====\n");
+
+            printf("%s","Resultado por array:\n");
+            gettimeofday(&inicio, 0);
             printf("%s",printPeoplePerCity(items, size));
+            gettimeofday(&fin, 0);    
+            printf("Tiempo de ejecución: %f \n", executionTime(inicio, fin));
+
+            printf("%s","Resultado por Lista ligada:\n");
+            gettimeofday(&inicio, 0);
+            printf("%s",quantityByCity(head));
+            gettimeofday(&fin, 0);    
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+
         }else if(option==2){
             printf("%s","===== PUNTO 2. Promedio de salarios por ciudad en un rango de edad =====\n");
             int ageMinimum;
@@ -26,7 +41,19 @@ void selectOption(item_t items[], int size){
             scanf("%d", &ageMaximum);
             printf("Ingrese el número correspondiente a la ciudad:\n0 = Dallas, 1 = New York City, 2 = Los Angeles, 3 = Mountain View, 4 = Boston, 5 = Washington D.C., 6 = San Diego, 7 = Austin.\n* ");
             scanf("%d",&cityAverageIncome);
+
+            printf("%s","Resultado por array:\n");
+            gettimeofday(&inicio, 0);
             printf("%s",printAverageIncome(items, size, ageMinimum, ageMaximum, cityAverageIncome));
+            gettimeofday(&fin, 0);    
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+
+            printf("%s","Resultado por lista ligada:\n");
+            gettimeofday(&inicio, 0);
+            printf("%s",incomeCity(head, cityAverageIncome, ageMinimum, ageMaximum));
+            gettimeofday(&fin, 0);    
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+
         }else if(option==3){
             printf("%s","===== PUNTO 3. Probabilidad de estar enfermo en un rango de edad =====\n");
             int ageMin;
@@ -64,3 +91,6 @@ void selectOption(item_t items[], int size){
     }
 }
 
+double executionTime(struct timeval inicio, struct timeval fin){
+    return ((double) (fin.tv_usec - inicio.tv_usec) / 1000000 + (double) (fin.tv_sec - inicio.tv_sec));
+}

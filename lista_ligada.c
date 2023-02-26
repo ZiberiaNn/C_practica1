@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "base_struct.c"
 
 typedef struct Node_Item{
     item_t data;
@@ -15,7 +14,7 @@ Node_Item *reverseList(Node_Item *head);
 void insert_middle(Node_Item *head, item_t element);
 void increment_id(Node_Item *head);
 char * quantityByCity(Node_Item *head);
-char * incomeCity(Node_Item *head, char city[], int x, int y);
+char * incomeCity(Node_Item *head, int city, int minAge, int maxAge);
 char * ageByCity(Node_Item *head, int edad);
 
 Node_Item *createNodeItem(item_t *data){
@@ -44,7 +43,7 @@ Node_Item *reverseList(Node_Item *head) {
 }
 
 char * probability_disease(int age, Node_Item *head){
-    char str[100];
+    static char str[100];
     int quantity = 0, patients=0;
     Node_Item *temp = head;
     while(temp != NULL){
@@ -61,7 +60,7 @@ char * probability_disease(int age, Node_Item *head){
 }
 
 char * search_by_id(Node_Item *head, int id){
-    char str[100];
+    static char str[100];
     Node_Item *temp = head;
     while(temp != NULL){
         if(temp->data.id == id){
@@ -72,7 +71,7 @@ char * search_by_id(Node_Item *head, int id){
         temp = temp->next;
     }
     snprintf(str, sizeof(str),"No se encontró el usuario con el id %d", id);
-    return NULL;
+    return str;
 }
 
 void insert_middle(Node_Item *head, item_t element){
@@ -119,15 +118,15 @@ char * quantityByCity(Node_Item *head){
 }
 
 
-char * incomeCity(Node_Item *head, char city[], int x, int y){
+char * incomeCity(Node_Item *head, int city, int minAge, int maxAge){
     Node_Item *temp = head;
     int income = 0;
     int quantity = 0.0;
     float average = 0;
     static char str[100];    
     while(temp != NULL){
-        if(city_names[temp->data.city] == city){
-            if(temp->data.age >= x && temp->data.age <= y){
+        if(temp->data.city == city){
+            if(temp->data.age >= minAge && temp->data.age <= maxAge){
                 income += temp->data.income;
                 quantity++;
             }
@@ -135,7 +134,7 @@ char * incomeCity(Node_Item *head, char city[], int x, int y){
         temp = temp->next;
     }
     average = income/quantity;
-    snprintf(str, sizeof(str), "El salario promedio de personas que viven en %s que tienen entre %d y %d es de: %f\n", city, x, y, average);
+    snprintf(str, sizeof(str), "El salario promedio de personas que viven en %s que tienen entre %d y %d es de: %f\n", city_names[city], minAge, maxAge, average);
     return str;
 }
 
