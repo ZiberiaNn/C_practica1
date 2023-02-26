@@ -96,26 +96,33 @@ char * probability_disease(int age, Node_Item *head){
         //Se asigna el nodo siguiente como el nodo actual.
         temp = temp->next;
     }
-    //Se libera la memoria del apuntador temp.
-    free(temp);
     //Se almacena en el arreglo de caracteres el resultado.
     snprintf(str, sizeof(str),"La probabilidad de que una persona de %d años o más esté enferma es de %f\n", age, (float)patients/quantity);
     //Se regresa el arreglo de caracteres.
     return str;
 }
 
+//Método que busca un elemento por su id.
 char * search_by_id(Node_Item *head, int id){
-    static char str[100];
+    //Se crea un arreglo de caracteres que almacenará el resultado.
+    static char str[200];
+    //Se crea un apuntador que apuntará al nodo actual.
     Node_Item *temp = head;
+    //Se recorre la lista hasta que el apuntador temp sea NULL.
     while(temp != NULL){
+        //Se verifica si la información del nodo actual contiene el id ingresado.
         if(temp->data.id == id){
+            //Se almacena en el arreglo de caracteres el resultado.
             snprintf(str, sizeof(str),"id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", temp->data.id, city_names[temp->data.city], temp->data.age, gender_names[temp->data.gender], temp->data.income, illness_values[temp->data.illness] );
-            printf("%d", temp->data.id);
+            //Se regresa el arreglo de caracteres.
             return str;
         }
+        //Se asigna el nodo siguiente como el nodo actual.
         temp = temp->next;
     }
+    //Se almacena en el arreglo de caracteres el resultado.
     snprintf(str, sizeof(str),"No se encontró el usuario con el id %d", id);
+    //Se regresa el arreglo de caracteres.
     return str;
 }
 
