@@ -41,9 +41,13 @@ Node_Item *createNodeItem(item_t *data){
     return new;
 }
 
+//Método que inserta un nodo al inicio de la lista ligada.
 void insert(Node_Item **head, item_t *data){
+    //Se crea un nuevo nodo.
     Node_Item *new = createNodeItem(data);
+    //Se asigan el apuntador que puntaba al inicio de la lista, al apuntador de siguiente del nuevo nodo.
     new->next = *head;
+    //Se asigna el nuevo nodo como el inicio de la lista.
     *head = new;
 }
 
