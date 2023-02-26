@@ -1,25 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Estructura del nodo de la lista ligada.
+ * data, hace referencia al tipo de dato que almacena el nodo.
+ * next, es un apuntador al siguiente nodo de la lista.  
+*/
 typedef struct Node_Item{
     item_t data;
     struct Node_Item *next;
 }Node_Item;
 
+// Definición del método que crea un nodo de la lista ligada.
 Node_Item* createNodeItem(item_t *data);
+//Definición del método que inserta un nodo al inicio de la lista ligada.
 void insert(Node_Item **head, item_t *data);
+//Definicición del método que calcula la probabilidad de estar enfermo en un rango de edad si se tiene un rango de edad.
 char * probability_disease(int age, Node_Item *head);
+//Definición del método que busca un elemento por su id.
 char * search_by_id(Node_Item *head, int id);
+//Definición del método que invierte la lista ligada.
 Node_Item *reverseList(Node_Item *head);
+//Definición del método que inserta un elemento en la mitad de la lista ligada.
 void insert_middle(Node_Item *head, item_t element);
+//Definición del método que incrementa en 1 el id de los elementos de la lista ligada.
 void increment_id(Node_Item *head);
 char * quantityByCity(Node_Item *head);
 char * incomeCity(Node_Item *head, int city, int minAge, int maxAge);
 char * ageByCity(Node_Item *head, int edad);
 
+
+//Método que crea un nodo de la lista ligada.
 Node_Item *createNodeItem(item_t *data){
+    //Se reserva memoria para el nuevo nodo.
     Node_Item *new = (Node_Item*)malloc(sizeof(Node_Item));
+    //Se le inserta el dato al nodo.
     new->data = *data;
+    //Se le asigna NULL al apuntador next.
     new->next = NULL;
     return new;
 }
