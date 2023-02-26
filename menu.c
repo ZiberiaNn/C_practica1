@@ -82,7 +82,8 @@ void selectOption(item_t items[], int size, struct Node_Item *head){
             gettimeofday(&inicio, 0);
             char * resultGetById = getElementById(items[id-1]);
             printf("%s",resultGetById);
-            gettimeofday(&fin, 0);    
+            gettimeofday(&fin, 0);  
+            //Libera el bloque de memoria asignado con malloc dentro de la función getElementById  
             free(resultGetById);
             printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
 
@@ -91,21 +92,44 @@ void selectOption(item_t items[], int size, struct Node_Item *head){
             printf("%s",search_by_id(head, id));
             gettimeofday(&fin, 0);    
             printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
-       
-            //Libera el bloque de memoria asignado con malloc dentro de la función getElementById
+    
         }else if(option==5){ 
             printf("===== PUNTO 5. Ingresar elemento a la mitad de los datos (id = 75000) =====\n");
-            char * resultInsertElement = insertElement(items, size, getElementFromInput(size));
+            item_t elemento=getElementFromInput(size);
+
+            printf("%s","Resultado por array:\n");
+            gettimeofday(&inicio, 0);
+            char * resultInsertElement = insertElement(items, size, elemento);
             printf("%s",resultInsertElement);
+            gettimeofday(&fin, 0);    
             //Libera el bloque de memoria asignado con malloc dentro de la función resultInsertElement
             free(resultInsertElement);
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+
+            printf("%s","Resultado por lista ligada:\n");
+            gettimeofday(&inicio, 0);
+            insert_middle(head, elemento);
+            gettimeofday(&fin, 0);    
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
         }else if(option==6){
             printf("%s","===== PUNTO 6. Número de personas por ciudad con cierta edad =====\n");
             int ageCity;
             // Pide la edad minima y maxima por consola
             printf("Ingrese la edad a buscar: ");
             scanf("%d", &ageCity);
+
+            printf("%s","Resultado por array:\n");
+            gettimeofday(&inicio, 0);
             printf("%s",printPeoplePerCityWithAge(items, size, ageCity));
+            gettimeofday(&fin, 0);    
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+
+            printf("%s","Resultado por lista ligada:\n");
+            gettimeofday(&inicio, 0);
+            printf("%s",ageByCity(head, ageCity));
+            gettimeofday(&fin, 0);    
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+
         }else if(option==7){
             printf("%s","===== PUNTO 7. Imprimir el resultado de cada opción en el archivo results.txt =====\n");
             printFileOut(items, size);
