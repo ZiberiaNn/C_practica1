@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "base_struct.h"
+#include "base_struct.c"
 
 typedef struct Node_Item{
     item_t data;
@@ -9,8 +9,8 @@ typedef struct Node_Item{
 
 Node_Item* createNodeItem(item_t *data);
 void insert(Node_Item **head, item_t *data);
-void probability_disease(int age, Node_Item *head);
-Node_Item *search_by_id(Node_Item *head, int id);
+char * probability_disease(int age, Node_Item *head);
+char * search_by_id(Node_Item *head, int id);
 Node_Item *reverseList(Node_Item *head);
 void insert_middle(Node_Item *head, item_t element);
 void increment_id(Node_Item *head);
@@ -43,7 +43,8 @@ Node_Item *reverseList(Node_Item *head) {
     return newHead;
 }
 
-void probability_disease(int age, Node_Item *head){
+char * probability_disease(int age, Node_Item *head){
+    char str[100];
     int quantity = 0, patients=0;
     Node_Item *temp = head;
     while(temp != NULL){
@@ -55,18 +56,22 @@ void probability_disease(int age, Node_Item *head){
         }
         temp = temp->next;
     }
-    printf("La probabilidad de que una persona de %d años o más esté enferma es de %f\n", age, (float)patients/quantity);
+    snprintf(str, sizeof(str),"La probabilidad de que una persona de %d años o más esté enferma es de %f\n", age, (float)patients/quantity);
+    return str;
 }
 
-Node_Item *search_by_id(Node_Item *head, int id){
+char * search_by_id(Node_Item *head, int id){
+    char str[100];
     Node_Item *temp = head;
     while(temp != NULL){
         if(temp->data.id == id){
+            snprintf(str, sizeof(str),"id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", temp->data.id, city_names[temp->data.city], temp->data.age, gender_names[temp->data.gender], temp->data.income, illness_values[temp->data.illness] );
             printf("%d", temp->data.id);
-            return temp;
+            return str;
         }
         temp = temp->next;
     }
+    snprintf(str, sizeof(str),"No se encontró el usuario con el id %d", id);
     return NULL;
 }
 
