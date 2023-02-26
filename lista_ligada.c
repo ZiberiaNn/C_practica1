@@ -73,21 +73,34 @@ Node_Item *reverseList(Node_Item *head) {
     return newHead;
 }
 
-
+//Método que calcula la probabilidad de estar enfermo si se tiene cierta edad o superior.
 char * probability_disease(int age, Node_Item *head){
-    static char str[100];
+    //Se crea un arreglo de caracteres que almacenará el resultado.
+    static char str[200];
+    //Se inicializan las variables que almacenarán la cantidad de personas que tienen cierta edad o superior y la cantidad de personas enfermas.
     int quantity = 0, patients=0;
+    //Se crea un apuntador que apuntará al nodo actual.
     Node_Item *temp = head;
+    //Se recorre la lista hasta que el apuntador temp sea NULL.
     while(temp != NULL){
+        //Se verifica si la información del nodo actual contiene una edad mayor o igual a la edad ingresada.
         if(temp->data.age>=age){
+            //Se incrementa en 1 la cantidad de personas que tienen cierta edad o superior.
             quantity += 1;
+            //Se verifica si la información del nodo actual dice si esta enfermo o no.
             if(temp->data.illness == true){
+                //Se incrementa en 1 la cantidad de personas enfermas.
                 patients += 1;
             }
         }
+        //Se asigna el nodo siguiente como el nodo actual.
         temp = temp->next;
     }
+    //Se libera la memoria del apuntador temp.
+    free(temp);
+    //Se almacena en el arreglo de caracteres el resultado.
     snprintf(str, sizeof(str),"La probabilidad de que una persona de %d años o más esté enferma es de %f\n", age, (float)patients/quantity);
+    //Se regresa el arreglo de caracteres.
     return str;
 }
 
