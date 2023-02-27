@@ -1,0 +1,35 @@
+El número de personas en Dallas es 19707
+El número de personas en New York City es 50307
+El número de personas en Los Angeles es 32173
+El número de personas en Mountain View es 14219
+El número de personas en Boston es 8301
+El número de personas en Washington D.C. es 8120
+El número de personas en San Diego es 4881
+El número de personas en Austin es 12292
+El número de personas en Error es 0
+El número de personas en Dallas es 19707
+El número de personas en New York City es 50307
+El número de personas en Los Angeles es 32173
+El número de personas en Mountain View es 14219
+El número de personas en Boston es 8301
+El número de personas en Washington D.C. es 8120
+El número de personas en San Diego es 4881
+El número de personas en Austin es 12292
+El número de personas en Error es 0
+El salario promedio de personas que viven en Dallas que tienen entre 25 y 30 es de: 45187.000000
+La probabilidad de que una persona de 32 años o más esté enferma es de 0.081306
+id: 9855, ciudad: Dallas, edad: 25, genero: Female, ingresos: 26423 , enfermo:No  
+Elemento insertado
+de personas en Washington D.C. es 8120
+El número de personas en San Diego es 4881
+El número de personas en Austin es 12292
+El número de personas en Error es 0
+La cantidad de personas con 36 años que viven en Dallas es de 492
+La cantidad de personas con 36 años que viven en New York City es de 1312
+La cantidad de personas con 36 años que viven en Los Angeles es de 794
+La cantidad de personas con 36 años que viven en Mountain View es de 353
+La cantidad de personas con 36 años que viven en Boston es de 201
+La cantidad de personas con 36 años que viven en Washington D.C. es de 214
+La cantidad de personas con 36 años que viven en San Diego es de 100
+La cantidad de personas con 36 años que viven en Austin es de 314
+La cantidad de personas con 36 años que viven en Error es de 0

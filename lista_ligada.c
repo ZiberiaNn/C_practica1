@@ -8,14 +8,14 @@ typedef struct Node_Item{
 
 Node_Item* createNodeItem(item_t *data);
 void insert(Node_Item **head, item_t *data);
+char * quantityByCity(Node_Item *head);
+char * incomeCity(Node_Item *head, int city, int minAge, int maxAge);
 char * probability_disease(int age, Node_Item *head);
 char * search_by_id(Node_Item *head, int id);
 Node_Item *reverseList(Node_Item *head);
-void insert_middle(Node_Item *head, item_t element);
+char * insert_middle(Node_Item *head, item_t element);
 void increment_id(Node_Item *head);
-char * quantityByCity(Node_Item *head);
-char * incomeCity(Node_Item *head, int city, int minAge, int maxAge);
-char * ageByCity(Node_Item *head, int edad);
+char * ageByCity(Node_Item *head, int age);
 
 Node_Item *createNodeItem(item_t *data){
     Node_Item *new = (Node_Item*)malloc(sizeof(Node_Item));
@@ -65,7 +65,6 @@ char * search_by_id(Node_Item *head, int id){
     while(temp != NULL){
         if(temp->data.id == id){
             snprintf(str, sizeof(str),"id: %d, ciudad: %s, edad: %d, genero: %s, ingresos: %d , enfermo:%s  \n", temp->data.id, city_names[temp->data.city], temp->data.age, gender_names[temp->data.gender], temp->data.income, illness_values[temp->data.illness] );
-            printf("%d", temp->data.id);
             return str;
         }
         temp = temp->next;
@@ -74,8 +73,9 @@ char * search_by_id(Node_Item *head, int id){
     return str;
 }
 
-void insert_middle(Node_Item *head, item_t element){
-     Node_Item *temp = head;
+char * insert_middle(Node_Item *head, item_t element){
+    Node_Item *temp = head;
+    static char result[100];
     while(temp != NULL){
         if(temp->data.id==74999){
             Node_Item *new = createNodeItem(&element);
@@ -83,12 +83,12 @@ void insert_middle(Node_Item *head, item_t element){
             temp->next=new;
             temp = new->next;
             increment_id(temp);
-            return;
-            
+            snprintf(result, sizeof(result), "Elemento insertado\n");
         }
         temp->data.id += 1;
         temp = temp->next;
     }
+    return result;
 }
 
 void increment_id(Node_Item *head){
@@ -138,19 +138,19 @@ char * incomeCity(Node_Item *head, int city, int minAge, int maxAge){
     return str;
 }
 
-char * ageByCity(Node_Item *head, int edad){
+char * ageByCity(Node_Item *head, int age){
     unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
     char str[100];
     static char ageByCity[500];
     for(int i=0; i < 9; i++){
         Node_Item *temp = head;
         while(temp != NULL){
-            if(city_names[temp->data.city] == city_names[i] && temp->data.age == edad){
+            if(city_names[temp->data.city] == city_names[i] && temp->data.age == age){
                 cityCount[i]++;
             }
             temp = temp->next;
         }
-        snprintf(str, sizeof(str), "Las cantidad de personas con %d años que viven en %s es de %d\n", edad, city_names[i], cityCount[i]);
+        snprintf(str, sizeof(str), "La cantidad de personas con %d años que viven en %s es de %d\n", age, city_names[i], cityCount[i]);
         strcat(ageByCity, str);
     }
     return ageByCity;

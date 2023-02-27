@@ -7,16 +7,16 @@ Número de personas en Washington D.C.: 8120.
 Número de personas en San Diego: 4881.
 Número de personas en Austin: 12292.
 Número de personas en Error: 0.
-Promedio de ingresos en Los Angeles: 95280.
-La probabilidad de estar enfermo es: 1701/20531 = 0.082850 
-Element with ID: 75000, City: Austin, Gender: Female, Age: 65, Income: 8888, Illness: Yes.
-Elemento insertado: ID: 75000, City: Los Angeles, Gender: Male, Age: 50, Income: 22, Illness: No.
-Número de personas con 60 años en Dallas: 517.
-Número de personas con 60 años en New York City: 1226.
-Número de personas con 60 años en Los Angeles: 724.
-Número de personas con 60 años en Mountain View: 344.
-Número de personas con 60 años en Boston: 190.
-Número de personas con 60 años en Washington D.C.: 199.
-Número de personas con 60 años en San Diego: 116.
-Número de personas con 60 años en Austin: 266.
-Número de personas con 60 años en Error: 0.
+Promedio de ingresos en Dallas: 45187.
+La probabilidad de estar enfermo es: 10191/125341 = 0.081306 
+Element with ID: 9855, City: Dallas, Gender: Female, Age: 25, Income: 26423, Illness: No.
+Elemento insertado: ID: 75000, City: Dallas, Gender: Male, Age: 42, Income: 30120, Illness: Yes.
+Número de personas con 36 años en Dallas: 492.
+Número de personas con 36 años en New York City: 1312.
+Número de personas con 36 años en Los Angeles: 794.
+Número de personas con 36 años en Mountain View: 353.
+Número de personas con 36 años en Boston: 201.
+Número de personas con 36 años en Washington D.C.: 214.
+Número de personas con 36 años en San Diego: 100.
+Número de personas con 36 años en Austin: 314.
+Número de personas con 36 años en Error: 0.
