@@ -171,8 +171,12 @@ char * quantityByCity(Node_Item *head){
     unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
     //Variable donde se va a ir almacenando la información a medida que recorre una ciudad
     char str[100];
+    //Inicializa el array vacío
+    memset(str, 0, sizeof(str));
     //Variable para mostrar la cantidad de personas por cada ciudad
     static char peopleByCity[500];
+    //Inicializa el array vacío
+    memset(peopleByCity, 0, sizeof(peopleByCity));
     //Ciclo para recorrer cada una de las ciudades e ir asignando la persona con su respectiva ciudad
     for(int i=0; i < 9; i++){
         Node_Item *temp = head;
@@ -204,6 +208,8 @@ char * incomeCity(Node_Item *head, int city, int minAge, int maxAge){
     float average = 0;
     //Variable para mostrar el salario promedio
     static char str[100];  
+    //Inicializa el array vacío
+    memset(str, 0, sizeof(str));
     //Recorrer la lista ligada  
     while(temp != NULL){
         //Valida que el elemento pertenezca a la ciudad y tenga el rango de edad
@@ -228,8 +234,12 @@ char * ageByCity(Node_Item *head, int age){
     unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
     //Variable donde se va a ir almacenando la información a medida que recorre una ciudad
     char str[100];
+    //Inicializa el array vacío
+    memset(str, 0, sizeof(str));
     //Variable para mostrar la cantidad de personas por cada ciudad con X años
     static char ageByCity[500];
+    //Inicializa el array vacío
+    memset(ageByCity, 0, sizeof(ageByCity));
     //Ciclo para recorrer cada una de las ciudades e ir asignando la persona de X años con su respectiva ciudad
     for(int i=0; i < 9; i++){
         Node_Item *temp = head;
