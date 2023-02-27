@@ -6,6 +6,8 @@
         "peoplepercity.h": "c",
         "stdio.h": "c",
         "fileout.h": "c",
-        "menu.h": "c"
+        "menu.h": "c",
+        "setjmp.h": "c",
+        "stdlib.h": "c"
     }
 }

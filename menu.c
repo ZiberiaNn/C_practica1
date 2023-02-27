@@ -55,16 +55,19 @@ void selectOption(item_t items[], int size, struct Node_Item *head)
             scanf("%d", &cityAverageIncome);
 
             printf("%s", "Resultado por array:\n");
-            gettimeofday(&inicio, 0);
-            printf("%s", printAverageIncome(items, size, ageMinimum, ageMaximum, cityAverageIncome));
-            gettimeofday(&fin, 0);
-            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
 
-            printf("%s", "Resultado por lista ligada:\n");
-            gettimeofday(&inicio, 0);
-            printf("%s\n", incomeCity(head, cityAverageIncome, ageMinimum, ageMaximum));
-            gettimeofday(&fin, 0);
-            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+            if (setjmp(env) == 0) {
+                gettimeofday(&inicio, 0);
+                printf("%s", printAverageIncome(items, size, ageMinimum, ageMaximum, cityAverageIncome));
+                gettimeofday(&fin, 0);
+                printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+
+                printf("%s", "Resultado por lista ligada:\n");
+                gettimeofday(&inicio, 0);
+                printf("%s\n", incomeCity(head, cityAverageIncome, ageMinimum, ageMaximum));
+                gettimeofday(&fin, 0);
+                printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+            }
         }
         else if (option == 3)
         {
@@ -74,17 +77,19 @@ void selectOption(item_t items[], int size, struct Node_Item *head)
             printf("Ingrese la edad minima: ");
             scanf("%d", &ageMin);
 
-            printf("%s", "Resultado por array:\n");
-            gettimeofday(&inicio, 0);
-            printf("%s", printProbabilitySick(items, size, ageMin));
-            gettimeofday(&fin, 0);
-            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+            if (setjmp(env) == 0) {
+                printf("%s", "Resultado por array:\n");
+                gettimeofday(&inicio, 0);
+                printf("%s", printProbabilitySick(items, size, ageMin));
+                gettimeofday(&fin, 0);
+                printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
 
-            printf("%s", "Resultado por lista ligada:\n");
-            gettimeofday(&inicio, 0);
-            printf("%s", probability_disease(ageMin, head));
-            gettimeofday(&fin, 0);
-            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+                printf("%s", "Resultado por lista ligada:\n");
+                gettimeofday(&inicio, 0);
+                printf("%s", probability_disease(ageMin, head));
+                gettimeofday(&fin, 0);
+                printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+            }
         }
         else if (option == 4)
         {

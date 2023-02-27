@@ -2,11 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 #include "base_struct.h"
+#include <setjmp.h>
+
+jmp_buf env;
 
 // Calculate the probability of being sick of a person in a range of ages
 
 const char *printProbabilitySick(item_t items[], int size, int ageMin)
 {
+    if(ageMin < 0){
+        printf("La edad no debe ser negativa\n");
+        longjmp(env, 1);
+    }
     // String que retorna el resultado de la probabilidad
     static char probabilitySick[100];
     // Reinicializa el string en "" (null)

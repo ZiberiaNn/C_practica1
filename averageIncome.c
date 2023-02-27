@@ -3,6 +3,9 @@
 #include <string.h>
 #include "base_struct.h"
 #include "peoplePerCity.h"
+#include <setjmp.h>
+
+jmp_buf env;
 
 // Calculate the average income of the people in a city and with a certain age
 
@@ -10,6 +13,16 @@
 unsigned int averageIncome[9] = {0,0,0,0,0,0,0,0,0};
 
 const char * printAverageIncome(item_t items[], int size, int ageMinimum, int ageMaximum, int cityAverageIncome){
+
+    if(ageMaximum < ageMinimum){
+        printf("Edad máxima no puede ser menor que edad mínima\n");
+        longjmp(env, 1);
+    }
+    if(ageMaximum <= 0 || ageMinimum <= 0){
+        printf("Los valores deben ser positivos\n");
+        longjmp(env, 1);
+    }
+    
     memset(averageIncome, 0, sizeof(averageIncome));
 
     int cityCountPerAge[9] = {0,0,0,0,0,0,0,0,0};
