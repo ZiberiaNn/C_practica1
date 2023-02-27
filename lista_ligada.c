@@ -16,18 +16,16 @@ Node_Item* createNodeItem(item_t *data);
 //Definición del método que inserta un nodo al inicio de la lista ligada.
 void insert(Node_Item **head, item_t *data);
 //Definicición del método que calcula la probabilidad de estar enfermo en un rango de edad si se tiene un rango de edad.
+char * quantityByCity(Node_Item *head);
+char * incomeCity(Node_Item *head, int city, int minAge, int maxAge);
 char * probability_disease(int age, Node_Item *head);
 //Definición del método que busca un elemento por su id.
 char * search_by_id(Node_Item *head, int id);
 //Definición del método que invierte la lista ligada.
 Node_Item *reverseList(Node_Item *head);
-//Definición del método que inserta un elemento en la mitad de la lista ligada.
-void insert_middle(Node_Item *head, item_t element);
-//Definición del método que incrementa en 1 el id de los elementos de la lista ligada.
+char * insert_middle(Node_Item *head, item_t element);
 void increment_id(Node_Item *head);
-char * quantityByCity(Node_Item *head);
-char * incomeCity(Node_Item *head, int city, int minAge, int maxAge);
-char * ageByCity(Node_Item *head, int edad);
+char * ageByCity(Node_Item *head, int age);
 
 
 //Método que crea un nodo de la lista ligada.
@@ -126,11 +124,10 @@ char * search_by_id(Node_Item *head, int id){
     //Se regresa el arreglo de caracteres.
     return str;
 }
-//Método para insertar un elemento en la mitad de la lista ligada.
-void insert_middle(Node_Item *head, item_t element){
-    //Se crea un apuntador que apuntará al nodo actual.
+
+char * insert_middle(Node_Item *head, item_t element){
     Node_Item *temp = head;
-    //Se recorre la lista hasta que el apuntador temp sea NULL.
+    static char result[100];
     while(temp != NULL){
         //Se verifica si el id del nodo actual es 74999.
         if(temp->data.id==74999){
@@ -144,11 +141,11 @@ void insert_middle(Node_Item *head, item_t element){
             temp = new->next;
             //Se llama al método que incrementa en 1 el id de todos los nodos siguientes al nuevo nodo.
             increment_id(temp);
-            return;
-            
+            snprintf(result, sizeof(result), "Elemento insertado\n");
         }
         temp = temp->next;
     }
+    return result;
 }
 
 //Método que incrementa en 1 el id de todos los nodos siguientes al nuevo nodo.
@@ -203,19 +200,19 @@ char * incomeCity(Node_Item *head, int city, int minAge, int maxAge){
     return str;
 }
 
-char * ageByCity(Node_Item *head, int edad){
+char * ageByCity(Node_Item *head, int age){
     unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
     char str[100];
     static char ageByCity[500];
     for(int i=0; i < 9; i++){
         Node_Item *temp = head;
         while(temp != NULL){
-            if(city_names[temp->data.city] == city_names[i] && temp->data.age == edad){
+            if(city_names[temp->data.city] == city_names[i] && temp->data.age == age){
                 cityCount[i]++;
             }
             temp = temp->next;
         }
-        snprintf(str, sizeof(str), "Las cantidad de personas con %d años que viven en %s es de %d\n", edad, city_names[i], cityCount[i]);
+        snprintf(str, sizeof(str), "La cantidad de personas con %d años que viven en %s es de %d\n", age, city_names[i], cityCount[i]);
         strcat(ageByCity, str);
     }
     return ageByCity;

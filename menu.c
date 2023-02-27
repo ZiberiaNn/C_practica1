@@ -123,7 +123,7 @@ void selectOption(item_t items[], int size, struct Node_Item *head)
 
             printf("%s", "Resultado por lista ligada:\n");
             gettimeofday(&inicio, 0);
-            insert_middle(head, elemento);
+            printf("%s", insert_middle(head, elemento));
             gettimeofday(&fin, 0);
             printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
         }
@@ -188,6 +188,12 @@ void selectOption(item_t items[], int size, struct Node_Item *head)
             printf("%s", "Resultado por array:\n");
             gettimeofday(&inicio, 0);
             printFileOut(items, size, ageMinimum, ageMaximum, cityAverageIncome, ageMin, id, ageCity, elemento);
+            gettimeofday(&fin, 0);
+            printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
+            
+            printf("%s", "Resultado por lista ligada\n");
+            gettimeofday(&inicio, 0);
+            printFileOutListaLigada(head, ageMinimum, ageMaximum, cityAverageIncome,  ageMin, id, ageCity, elemento);
             gettimeofday(&fin, 0);
             printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
         }
