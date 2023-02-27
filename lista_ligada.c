@@ -15,16 +15,21 @@ typedef struct Node_Item{
 Node_Item* createNodeItem(item_t *data);
 //Definición del método que inserta un nodo al inicio de la lista ligada.
 void insert(Node_Item **head, item_t *data);
-//Definicición del método que calcula la probabilidad de estar enfermo en un rango de edad si se tiene un rango de edad.
+//Definición del método que calcula cuántas personas hay por ciudad
 char * quantityByCity(Node_Item *head);
+//Definición del método que calcula el promedio del salario de personas en un rango de edad de una ciudad en específico
 char * incomeCity(Node_Item *head, int city, int minAge, int maxAge);
+//Definición del método que calcula la probabilidad de estar enfermo en un rango de edad
 char * probability_disease(int age, Node_Item *head);
 //Definición del método que busca un elemento por su id.
 char * search_by_id(Node_Item *head, int id);
 //Definición del método que invierte la lista ligada.
 Node_Item *reverseList(Node_Item *head);
+//Definición del método para insertar un elemento en la mitad
 char * insert_middle(Node_Item *head, item_t element);
+//Definición del método que permite incrementar el id
 void increment_id(Node_Item *head);
+//Definición del método que calcula la cantidad de personas en cada ciudad con X edad
 char * ageByCity(Node_Item *head, int age);
 
 
@@ -162,18 +167,26 @@ void increment_id(Node_Item *head){
 }
 
 char * quantityByCity(Node_Item *head){
+    //Arreglo de enteros para guardar la cantidad de personas por cada ciudad
     unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
+    //Variable donde se va a ir almacenando la información a medida que recorre una ciudad
     char str[100];
+    //Variable para mostrar la cantidad de personas por cada ciudad
     static char peopleByCity[500];
+    //Ciclo para recorrer cada una de las ciudades e ir asignando la persona con su respectiva ciudad
     for(int i=0; i < 9; i++){
         Node_Item *temp = head;
+        //Recorrer la lista ligada e ir sumando uno a la posición de la ciudad
         while(temp != NULL){
             if(city_names[temp->data.city] == city_names[i]){
                 cityCount[i]++;
             }
+            //Avanza de nodo
             temp = temp->next;
         }
+        //Mostrar una ciudad y la cantidad de personas que hay en ella
         snprintf(str, sizeof(str), "El número de personas en %s es %d\n", city_names[i], cityCount[i]);
+        //Concatenar cada una de las ciudades y cantidad de personas de la variable str
         strcat(peopleByCity, str);
     }
     return peopleByCity;
@@ -181,38 +194,57 @@ char * quantityByCity(Node_Item *head){
 
 
 char * incomeCity(Node_Item *head, int city, int minAge, int maxAge){
+    //Apuntador al primer elemento de la lista
     Node_Item *temp = head;
+    //Variable para ir almacenando los salarios
     int income = 0;
+    //Variable para ir contando las personas que cumplen la condición
     int quantity = 0.0;
+    //Variable para guardar el promedio
     float average = 0;
-    static char str[100];    
+    //Variable para mostrar el salario promedio
+    static char str[100];  
+    //Recorrer la lista ligada  
     while(temp != NULL){
+        //Valida que el elemento pertenezca a la ciudad y tenga el rango de edad
         if(temp->data.city == city){
             if(temp->data.age >= minAge && temp->data.age <= maxAge){
                 income += temp->data.income;
                 quantity++;
             }
         }
+        //Avanza de nodo
         temp = temp->next;
     }
+    //Calcula el promedio
     average = income/quantity;
+    //Almacena la información para mostrar el salario promedio
     snprintf(str, sizeof(str), "El salario promedio de personas que viven en %s que tienen entre %d y %d es de: %f\n", city_names[city], minAge, maxAge, average);
     return str;
 }
 
 char * ageByCity(Node_Item *head, int age){
+    //Arreglo de enteros para guardar la cantidad de personas por cada ciudad
     unsigned int cityCount[9] = {0,0,0,0,0,0,0,0,0};
+    //Variable donde se va a ir almacenando la información a medida que recorre una ciudad
     char str[100];
+    //Variable para mostrar la cantidad de personas por cada ciudad con X años
     static char ageByCity[500];
+    //Ciclo para recorrer cada una de las ciudades e ir asignando la persona de X años con su respectiva ciudad
     for(int i=0; i < 9; i++){
         Node_Item *temp = head;
+        //Recorre la lista ligada
         while(temp != NULL){
+            //Compara la ciudad y que el elemento tenga la edad solicitada
             if(city_names[temp->data.city] == city_names[i] && temp->data.age == age){
                 cityCount[i]++;
             }
+            //Avanza de nodo
             temp = temp->next;
         }
+        //Mostrar una ciudad y la cantidad de personas que hay en ella con X años
         snprintf(str, sizeof(str), "La cantidad de personas con %d años que viven en %s es de %d\n", age, city_names[i], cityCount[i]);
+        //Concatenar cada una de las ciudades y cantidad de personas con X años de la variable str
         strcat(ageByCity, str);
     }
     return ageByCity;

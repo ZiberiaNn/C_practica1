@@ -62,7 +62,7 @@ void selectOption(item_t items[], int size, struct Node_Item *head)
 
             printf("%s", "Resultado por lista ligada:\n");
             gettimeofday(&inicio, 0);
-            printf("%s", incomeCity(head, cityAverageIncome, ageMinimum, ageMaximum));
+            printf("%s\n", incomeCity(head, cityAverageIncome, ageMinimum, ageMaximum));
             gettimeofday(&fin, 0);
             printf("Tiempo de ejecución: %f\n", executionTime(inicio, fin));
         }
