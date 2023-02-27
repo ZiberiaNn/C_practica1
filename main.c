@@ -88,4 +88,3 @@ int main(int argc, char *argv[]){
         free(line);
     exit(EXIT_SUCCESS);
 }
-

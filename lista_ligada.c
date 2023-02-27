@@ -59,9 +59,10 @@ Node_Item *reverseList(Node_Item *head) {
     //Se crea un apuntador que apuntará al nodo actual.
     Node_Item *current = head;
     //Se crea un apuntador que apuntará al nodo siguiente.
-    Node_Item *next = current->next;
+   
     //Se recorre la lista hasta que el apuntador current sea NULL.
     while (current != NULL) {       
+        Node_Item *next = current->next;
         //Al nodo actual se le asigna como siguiente el nodo que apuntaba al inicio de la lista.
         current->next = newHead;
         //Se asigna el nodo actual como el inicio de la lista.
